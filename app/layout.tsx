@@ -23,7 +23,7 @@ export default function RootLayout({
         <main className="flex flex-col items-center justify-between mt-[5rem]">
           {children}
         </main>
-        <footer>Footer</footer>
+        <footer className="flex justify-center">Footer</footer>
       </body>
     </html>
   );

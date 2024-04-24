@@ -32,16 +32,16 @@ const Nav = () => {
     >
       <div className="flex-1 flex items-center gap-6">
         <Image src={Logo} alt="Killian coaching logo" height={50} />
-        {/* <ul className="flex-1 flex justify-center gap-6">
+        <ul className="hidden flex-1 justify-center gap-6 md:flex">
           <li>Elem 1</li>
           <li>Elem 1</li>
           <li>Elem 1</li>
-        </ul> */}
+        </ul>
       </div>
-      <Button variant="link" size="icon">
+      <Button variant="link" size="icon" className="md:hidden">
         <Menu size={24} />
       </Button>
-      {/* <Button>Réserver séance gratuite</Button> */}
+      <Button className="hidden md:block">Réserver séance gratuite</Button>
     </nav>
   );
 };

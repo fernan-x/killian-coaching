@@ -2,28 +2,10 @@ import Container from "../ui/container";
 
 const KeyBenefitSection = () => {
   return <Container>
-    <div className="flex flex-1 flex-row gap-12 p-12 items-center justify-center">
-      <div className="flex-1 flex">
-        <video className="h-full w-full" controls preload="none">
-          <source src={"/problem-solution.webm"} type="video/webm" />
-          <track
-            default
-            src={"/problem-solution.vtt"}
-            kind="captions"
-            srcLang="en"
-            label="English"
-          />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <div className="flex-1">
-        <h2 className="text-4xl font-bold">Problem / Solution Section</h2>
-        <ul className="my-4">
-          <li>Je rencontre ce problème</li>
-          <li>Je rencontre ce problème</li>
-          <li>Je rencontre ce problème</li>
-        </ul>
-      </div>
+    <div className="flex-1 flex flex-col items-center p-12 gap-12 md:grid md:grid-cols-3">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
     </div>
   </Container>;
 };
