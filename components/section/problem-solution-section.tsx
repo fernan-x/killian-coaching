@@ -1,14 +1,15 @@
-import Container from "../ui/container";
+import { BASE_PATH } from "@/lib/constants";
+import Container from "@/components/ui/container";
 
 const ProblemSolutionSection = () => {
   return <Container>
     <div className="flex flex-1 gap-12 p-12 items-center justify-center flex-col md:flex-row">
-      <div className="flex-1 flex">
-        <video className="h-full w-full" controls>
-          <source src={"/problem-solution.webm"} type="video/webm" />
+      <div className="flex-1 flex justify-center">
+        <video className="max-h-[440px] w-auto rounded-lg" controls>
+          <source src={`/${BASE_PATH}problem-solution.webm`} type="video/webm" />
           <track
             default
-            src={"/problem-solution.vtt"}
+            src={`/${BASE_PATH}problem-solution.vtt`}
             kind="captions"
             srcLang="en"
             label="English"
