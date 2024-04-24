@@ -1,11 +1,12 @@
 import { Button } from "../ui/button";
 import Image from "next/image";
 import Container from "../ui/container";
+import HeroPicture from "@/assets/images/hero.jpg";
 
 const HeroSection = () => {
   return (
     <Container>
-      <div className="flex flex-col gap-6 p-12 items-start justify-center">
+      <div className="flex flex-1 flex-col gap-6 p-12 items-start justify-center">
         <h1 className="font-bold text-4xl">
           Devenez la meilleure version de vous même
         </h1>
@@ -14,15 +15,15 @@ const HeroSection = () => {
         </h2>
         <Button>Réserver une séance d&apos;essai</Button>
       </div>
-      <div className="flex p-12">
+      {/* <div className="p-12 flex flex-1 justify-center">
         <Image
-          src="/hero.jpg"
+          src={HeroPicture}
           alt="Killian helping a customer to bench"
-          width={500}
-          height={500}
           className="object-cover rounded-lg"
+          height={500}
+          width={500}
         />
-      </div>
+      </div> */}
     </Container>
   );
 };

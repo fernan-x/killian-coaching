@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Nav />
-        <main className="flex flex-col items-center justify-between">
+        <main className="flex flex-col items-center justify-between mt-[5rem]">
           {children}
         </main>
         <footer>Footer</footer>
