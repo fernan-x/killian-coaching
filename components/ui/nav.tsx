@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "./button";
-import Logo from "@/assets/images/logo-dark.jpeg";
+import Logo from "@/assets/images/logo-white.png";
 import { Menu } from "lucide-react";
 
 const Nav = () => {
@@ -12,7 +12,7 @@ const Nav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      let moving = window.scrollY + 80;
+      let moving = window.scrollY;
 
       setVisible(position > moving);
       setPosition(moving);
@@ -26,7 +26,7 @@ const Nav = () => {
 
   return (
     <nav
-      className={`flex w-full bg-slate-50 p-6 items-center gap-6 fixed z-20 top-0 start-0 h-20 transition-opacity ease-in-out delay-150 duration-500 ${
+      className={`absolute flex w-full bg-slate-50 p-6 items-center gap-6 fixed z-20 top-0 start-0 h-20 transition-opacity ease-in-out delay-150 duration-500 ${
         visible ? "opacity-100" : "opacity-0"
       }`}
     >

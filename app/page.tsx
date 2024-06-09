@@ -1,6 +1,6 @@
-import HeroSection from "@/components/section/hero-section";
-import ProblemSolutionSection from "@/components/section/problem-solution-section";
-import KeyBenefitSection from "@/components/section/key-benefit-section";
+import HeroSection from "@/components/section/1-hero-section";
+import ProblemSolutionSection from "@/components/section/2-problem-solution-section";
+import KeyBenefitSection from "@/components/section/3-key-benefit-section";
 
 export default function Home() {
   return (

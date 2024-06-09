@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Nav />
-        <main className="flex flex-col items-center justify-between mt-[5rem]">
+        {/* <Nav /> */}
+        <main className="flex flex-col items-center justify-between">
           {children}
         </main>
         <footer className="flex justify-center">Footer</footer>

@@ -26,10 +26,6 @@ const ProblemSolutionSection = () => {
         </ul>
       </div>
     </div>
-    <div className="flex flex-col justify-center items-center text-center gap-6 p-12">
-      <h2 className="text-4xl font-bold">Je suis là pour vous aider</h2>
-      <h3 className="text-2xl">Coaching personnalisé à domicile</h3>
-    </div>
   </Container>;
 };
 
