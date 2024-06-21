@@ -1,5 +1,6 @@
 import { BASE_PATH } from "@/lib/constants";
 import Container from "@/components/ui/container";
+import { H2 } from "../ui/text";
 
 const ProblemSolutionSection = () => {
   return <Container>
@@ -18,11 +19,11 @@ const ProblemSolutionSection = () => {
         </video>
       </div>
       <div className="flex-1">
-        <h2 className="text-4xl font-bold">Problem / Solution Section</h2>
+        <H2>Un coaching de proximité</H2>
         <ul className="my-4">
-          <li>Je rencontre ce problème</li>
-          <li>Je rencontre ce problème</li>
-          <li>Je rencontre ce problème</li>
+          <li>Vous n’avez pas de matériel de sport à disposition ?</li>
+          <li>Vous voulez plus que des vidéos en ligne pour votre suivi sportif ?</li>
+          <li>Vous...</li>
         </ul>
       </div>
     </div>

@@ -5,7 +5,7 @@ import { H1, Paragraph } from "../ui/text";
 const HeroSection = () => {
   return (
     <div
-      className="h-[800px] bg-cover bg-no-repeat relative"
+      className="h-[90vh] bg-cover bg-no-repeat relative"
       style={{
         backgroundImage: `url(${HeroPicture.src})`,
       }}
