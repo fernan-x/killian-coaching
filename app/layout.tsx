@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/ui/nav";
+import Footer from "@/components/section/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,7 @@ export default function RootLayout({
         <main className="flex flex-col items-center justify-between">
           {children}
         </main>
-        <footer className="flex justify-center">Footer</footer>
+        <Footer />
       </body>
     </html>
   );

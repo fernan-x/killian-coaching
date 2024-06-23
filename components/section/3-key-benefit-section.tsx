@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Container from "../ui/container";
 import { H2, H3, Paragraph } from "../ui/text";
-import MailToButton from '../ui/mailToButton';
+import MailToButton from '../ui/mail-to-button';
 import ProgramPicture from "@/assets/images/program.jpg";
 import NoEquipmentPicture from "@/assets/images/no-equipment.jpg";
 import CoachingPicture from "@/assets/images/coaching.jpg";
@@ -15,7 +15,7 @@ interface KeyBenefitSectionRowProps {
 }
 
 const KeyBenefitSectionRow = ({ picture, pictureAlt, title, content }: KeyBenefitSectionRowProps) => {
-  return <div className='flex flex-col w-full gap-12 items-center md:flex-row md:even:flex-row-reverse'>
+  return <div className='flex p-6 flex-col w-full gap-12 items-center md:flex-row md:even:flex-row-reverse transform transition duration-500 hover:scale-105'>
     <Image src={picture} width={300} height={250} alt={pictureAlt} className='rounded-xl' />
     <div className='flex gap-6 flex-col flex-1'>
       <H3>{title}</H3>

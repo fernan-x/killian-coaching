@@ -1,6 +1,6 @@
 import HeroPicture from "@/assets/images/hero.png";
 import { H1, Paragraph } from "../ui/text";
-import MailToButton from "../ui/mailToButton";
+import MailToButton from "../ui/mail-to-button";
 
 const HeroSection = () => {
 
