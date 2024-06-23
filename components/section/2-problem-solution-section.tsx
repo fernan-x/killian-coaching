@@ -21,7 +21,7 @@ const ProblemSolutionSection = () => {
       <div className="flex-1">
         <H2>Un coaching de proximité</H2>
         <ul className="my-4">
-          <li>Vous n’avez pas de matériel de sport à disposition ?</li>
+          <li>Vous n&apos;avez pas de matériel de sport à disposition ?</li>
           <li>Vous voulez plus que des vidéos en ligne pour votre suivi sportif ?</li>
           <li>Vous...</li>
         </ul>
