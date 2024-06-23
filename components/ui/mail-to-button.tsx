@@ -4,10 +4,10 @@ import React from 'react';
 import { Button } from './button';
 import { useMailTo } from '@/hooks/useMailTo';
 
-const MailToButton = ({ children }: React.PropsWithChildren) => {
+const MailToButton = ({ children, ...props }: React.PropsWithChildren & { className?: string }) => {
     const onMailTo = useMailTo();
 
-    return <Button onClick={onMailTo}>{children}</Button>;
+    return <Button onClick={onMailTo} {...props}>{children}</Button>;
 };
 
 export default MailToButton;

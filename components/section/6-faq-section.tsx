@@ -1,5 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import Container from "../ui/container";
+import MailToButton from "../ui/mail-to-button";
 import { H2 } from "../ui/text";
 
 type FAQElement = {
@@ -72,6 +73,7 @@ const FAQSection = () => {
       </AccordionItem>
     ))}
     </Accordion>
+    <MailToButton>Réserver une séance d&apos;essai</MailToButton>
   </Container>;
 };
 
