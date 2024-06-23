@@ -1,19 +1,23 @@
 import Image from 'next/image'
 import Container from "../ui/container";
 import { H2, H3, Paragraph } from "../ui/text";
-import Placeholder from '../ui/placeholder';
 import MailToButton from '../ui/mailToButton';
+import ProgramPicture from "@/assets/images/program.jpg";
+import NoEquipmentPicture from "@/assets/images/no-equipment.jpg";
+import CoachingPicture from "@/assets/images/coaching.jpg";
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 interface KeyBenefitSectionRowProps {
-  picture: any;
+  picture: string | StaticImport;
+  pictureAlt: string;
   title: string;
   content: string;
 }
 
-const KeyBenefitSectionRow = ({ picture, title, content }: KeyBenefitSectionRowProps) => {
-  return <div className='flex w-full gap-12 even:flex-row-reverse'>
-    <Placeholder />
-    <div>
+const KeyBenefitSectionRow = ({ picture, pictureAlt, title, content }: KeyBenefitSectionRowProps) => {
+  return <div className='flex flex-col w-full gap-12 items-center md:flex-row md:even:flex-row-reverse'>
+    <Image src={picture} width={300} height={250} alt={pictureAlt} className='rounded-xl' />
+    <div className='flex gap-6 flex-col flex-1'>
       <H3>{title}</H3>
       <Paragraph>{content}</Paragraph>
     </div>
@@ -27,17 +31,20 @@ const KeyBenefitSection = () => {
       <Paragraph>Avec un coaching personnalisé et qui s&apos;adapte à vos besoins</Paragraph>
     </div>
     <KeyBenefitSectionRow
-      picture={null}
+      picture={NoEquipmentPicture}
+      pictureAlt='Equipements sportifs au sol'
       title={`Pas besoin d'équipement`}
       content='Le fit truck est tout équipé! Je me déplace avec les poids, tapis, élastiques, chrono et autres.'
     />
     <KeyBenefitSectionRow
-      picture={null}
+      picture={ProgramPicture}
+      pictureAlt='Calpin avec un crayon posé dessus'
       title={`Programme 100% personnalisé`}
       content={`Nous construisons le programme ensemble, à l'aide d'un questionnaire complet et d'échanges. Et il évolue selon vos besoins. Programme aussi alimentaire et conseils.`}
     />
     <KeyBenefitSectionRow
-      picture={null}
+      picture={CoachingPicture}
+      pictureAlt='Killian motivant une personne faisant de la corde'
       title='A domicile, à distance, rien ne change'
       content='Nous communiquons en dehors des séances par messagerie, je fais des retours sur les vidéos des coaching a distance, je ne donne pas juste une programme.'
     />
