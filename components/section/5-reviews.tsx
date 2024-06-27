@@ -15,14 +15,15 @@ const ReviewSection = () => {
         </div>
         <H2>Et voici ce qu&apos;ils en pensent</H2>
         <Image src={GoogleLogo} height={100} alt='logo google' />
-        <div className='grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-            {REVIEWS.map(review => <ReviewCard
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {REVIEWS.map((review, idx) => <ReviewCard
                 key={review.id}
                 comment={review.comment}
                 user={review.user}
                 link={''}
                 picture={undefined}
                 note={review.note}
+                className={idx > Math.round(REVIEWS.length / 2) ? 'hidden lg:block': ''}
             />)}
         </div>
         <Link to='https://maps.app.goo.gl/HpxHoYC6uk9yPy2W7'>Voir tous les avis</Link>
