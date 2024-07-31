@@ -17,11 +17,11 @@ const Nav = () => {
           {/* TODO : Hover animation */}
           <li><Link href="/coaching">Coaching</Link></li>
           <li><Link href="/fit-truck">Fit Truck</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
+          {/* <li><Link href="/contact">Contact</Link></li> */}
         </ul>
       </div>
       <Link href="https://www.instagram.com/killian_coaching/" target="_blank" className="hidden md:flex">
-        <Instagram size={24}/>
+        <Instagram size={24} className="text-[#E7F3FF]" />
       </Link>
       <Button variant="link" size="icon" className="md:hidden">
         <Menu size={24} />
