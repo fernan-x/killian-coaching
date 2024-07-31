@@ -17,9 +17,9 @@ interface KeyBenefitSectionRowProps {
 }
 
 const KeyBenefitSectionRow = ({ picture, pictureAlt, title, content, additionalPictureClass }: KeyBenefitSectionRowProps) => {
-  return <div className='flex flex-col w-full gap-6 items-center md:flex-row md:even:flex-row-reverse transform transition duration-500 hover:scale-105'>
-    <div className='flex-1 flex min-h-60  w-full md:w-1/4 relative'>
-      <Image src={picture} fill alt={pictureAlt} className={twMerge('rounded-xl object-cover', additionalPictureClass)} />
+  return <div className='flex w-full gap-6 p-12 items-center flex-row even:flex-row-reverse lg:flex-col lg:even:flex-col'>
+    <div className='flex-1 flex min-h-60 w-60 relative'>
+      <Image src={picture} fill alt={pictureAlt} className={twMerge('rounded-md shadow-md object-cover', additionalPictureClass)} />
     </div>
     <div className='flex gap-6 flex-col flex-1'>
       <H3>{title}</H3>
@@ -34,7 +34,7 @@ const KeyBenefitSection = () => {
       <H2>Je suis là pour vous aider</H2>
       <Paragraph>Avec un coaching personnalisé et qui s&apos;adapte à vos besoins</Paragraph>
     </div>
-    <div className='flex flex-col gap-12'>
+    <div className='flex flex-col lg:flex-row gap-16 mt-6 mb-6'>
       <KeyBenefitSectionRow
         picture={NoEquipmentPicture}
         pictureAlt='Equipements sportifs au sol'

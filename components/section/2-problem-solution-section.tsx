@@ -6,7 +6,7 @@ const ProblemSolutionSection = () => {
   return <Container>
     <div className="flex flex-1 gap-12 p-12 items-center justify-center flex-col md:flex-row">
       <div className="flex-1 flex justify-center">
-        <video className="max-h-[440px] w-auto rounded-lg" controls>
+        <video className="max-h-[440px] w-auto rounded-md" controls>
           <source src={`/${BASE_PATH}problem-solution.webm`} type="video/webm" />
           <track
             default
