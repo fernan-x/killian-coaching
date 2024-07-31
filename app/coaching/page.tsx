@@ -37,7 +37,7 @@ export default function Coaching() {
           subTitle="Prix dégressif en fonction de l'engagement"
           subTitleTooltip={
             <div>
-              <b>Prix dégressif en fonction de l'engagement</b>
+              <b>Prix dégressif en fonction de l&apos;engagement</b>
               <ul className="mt-2">
                 <li>engagement 3 mois = 85€/mois</li>
                 <li>engagement 6 mois = 75€/mois</li>
