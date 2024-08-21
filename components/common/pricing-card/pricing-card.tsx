@@ -12,13 +12,13 @@ interface PricingCardProps {
   subTitle?: string;
   features: string[];
   buttonTitle?: string;
-  subTitleTooltip?: React.ReactNode;
+  anchor: string;
 }
 
-const PricingCard = ({ title, description, price, features, frequency, priceTitle, buttonTitle, subTitle, subTitleTooltip }: PricingCardProps) => {
+const PricingCard = ({ anchor, title, description, price, features, frequency, priceTitle, buttonTitle, subTitle }: PricingCardProps) => {
   const buttonText = buttonTitle || <>Réserver une séance d&apos;essai</>;
   return (
-    <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+    <div id={anchor} className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-[#000229] sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
       <div className="p-8 sm:p-10 lg:flex-auto">
         <h3 className="text-2xl font-bold tracking-tight text-gray-900">{title}</h3>
         <p className="mt-6 text-base leading-7 text-gray-600">{description}</p>
@@ -38,32 +38,22 @@ const PricingCard = ({ title, description, price, features, frequency, priceTitl
         </ul>
       </div>
       <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-        <div className="h-full rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
+        <div className="h-full rounded-2xl bg-[#000229] py-10 text-center text-primary-foreground lg:flex lg:flex-col lg:justify-center lg:py-16">
           <div className="mx-auto max-w-xs px-8">
             {priceTitle &&
-              <div className='flex items-center justify-center gap-x-1 text-gray-600 text-base font-semibold'>
+              <div className='flex items-center justify-center gap-x-1 text-base font-semibold'>
                 <span>{priceTitle}</span>
-                {subTitleTooltip && (
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger><CircleHelp className="h-4 w-4" /></TooltipTrigger>
-                      <TooltipContent>
-                        <p>{subTitleTooltip}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                )}
               </div>
             }
             {price &&
               <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                <span className="text-5xl font-bold tracking-tight text-gray-900">{price}</span>
-                <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">{frequency}</span>
+                <span className="text-5xl font-bold tracking-tight">{price}</span>
+                <span className="text-sm font-semibold leading-6 tracking-wide">{frequency}</span>
               </p>
             }
-            <MailToButton className='mt-10'>{buttonText}</MailToButton>
+            <MailToButton className='mt-10' variant='pricing'>{buttonText}</MailToButton>
             {subTitle &&
-              <span className="mt-6 text-xs leading-5 text-gray-600">
+              <span className="mt-6 text-xs leading-5">
                 {subTitle}
               </span>
             }
