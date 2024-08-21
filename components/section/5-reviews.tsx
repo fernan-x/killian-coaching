@@ -6,13 +6,12 @@ import ReviewCard from '../common/review-card';
 import Image from 'next/image';
 import GoogleLogo from '@/assets/images/google-reviews-logo.png';
 import Link from '../ui/link';
+import BeforeAfterSection from './before-after-section';
 
 const ReviewSection = () => {
     return <Container>
         <H2>Ils me font confiance pour leur santé</H2>
-        <div>
-
-        </div>
+        <BeforeAfterSection />
         <H2>Et voici ce qu&apos;ils en pensent</H2>
         <Image src={GoogleLogo} height={100} alt='logo google' />
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
