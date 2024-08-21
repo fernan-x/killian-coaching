@@ -11,6 +11,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary-hover",
         link: "text-[#E7F3FF] underline-offset-4 hover:text-[#E7F3FF]/60",
+        pricing: "bg-primary-foreground text-[#010658] hover:bg-primary-foreground/90",
       },
       size: {
         default: "py-3 px-6",
