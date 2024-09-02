@@ -30,7 +30,7 @@ const KeyBenefitSectionRow = ({ picture, pictureAlt, title, content, additionalP
 
 const KeyBenefitSection = () => {
   return <>
-    <Container className='bg-primary' noBg>
+    <Container bg='dark'>
       {/* <div className="flex flex-col justify-center items-center text-center gap-3">
         <H2>Je suis là pour vous aider</H2>
         <Paragraph>Avec un coaching personnalisé et qui s&apos;adapte à vos besoins</Paragraph>
@@ -56,7 +56,7 @@ const KeyBenefitSection = () => {
         />
       </div>
     </Container>
-    <Container fitContent noBg noPadding className='bg-primary pb-12'>
+    <Container fitContent noPadding className='bg-primary pb-12' bg='dark'>
       <CTAButton>Séance découverte offerte</CTAButton>
     </Container>
   </>;

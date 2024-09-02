@@ -3,10 +3,11 @@ import { cn } from "@/lib/utils";
 interface ContainerProps extends React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
   fitContent?: boolean;
   noBg?: boolean;
+  bg?: 'dark' | 'light' | 'white';
   noPadding?: boolean;
 }
 
-const Container = ({ children, fitContent = false, noBg = false, noPadding = false, ...props }: ContainerProps) => {
+const Container = ({ children, fitContent = false, bg = 'white', noPadding = false, ...props }: ContainerProps) => {
   return (
     <div
       {...props}
@@ -14,7 +15,7 @@ const Container = ({ children, fitContent = false, noBg = false, noPadding = fal
         "w-screen flex flex-col items-center gap-9",
         props.className,
         fitContent ? "h-fit" : "min-h-[300px]",
-        noBg ? "" : "bg-[#F3F7FF] even:bg-white",
+        bg === 'white' ? "bg-white" : (bg === 'dark' ? "bg-primary" : "bg-[#F3F7FF]"),
         noPadding ? "" : "py-12 px-28",
       )}
     >

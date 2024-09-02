@@ -3,7 +3,8 @@ import ProblemSolutionSection from "@/components/section/2-problem-solution-sect
 import KeyBenefitSection from "@/components/section/3-key-benefit-section";
 import BeforeAfterSection from "@/components/section/4-before-after-section";
 import ReviewSection from "@/components/section/5-reviews";
-import FAQSection from "@/components/section/6-faq-section";
+import PricingSection from "@/components/section/6-pricing-section";
+import FAQSection from "@/components/section/7-faq-section";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <KeyBenefitSection />
       <BeforeAfterSection />
       <ReviewSection />
+      <PricingSection />
       <FAQSection />
     </div>
   );
