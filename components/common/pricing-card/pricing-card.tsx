@@ -1,7 +1,5 @@
 import MailToButton from '@/components/ui/mail-to-button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import React from 'react';
-import { CircleHelp } from "lucide-react";
 
 interface PricingCardProps {
   title: string;
@@ -18,7 +16,7 @@ interface PricingCardProps {
 const PricingCard = ({ anchor, title, description, price, features, frequency, priceTitle, buttonTitle, subTitle }: PricingCardProps) => {
   const buttonText = buttonTitle || <>Réserver une séance d&apos;essai</>;
   return (
-    <div id={anchor} className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-[#000229] sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+    <div id={anchor} className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-primary sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
       <div className="p-8 sm:p-10 lg:flex-auto">
         <h3 className="text-2xl font-bold tracking-tight text-gray-900">{title}</h3>
         <p className="mt-6 text-base leading-7 text-gray-600">{description}</p>
@@ -38,7 +36,7 @@ const PricingCard = ({ anchor, title, description, price, features, frequency, p
         </ul>
       </div>
       <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-        <div className="h-full rounded-2xl bg-[#000229] py-10 text-center text-primary-foreground lg:flex lg:flex-col lg:justify-center lg:py-16">
+        <div className="h-full rounded-2xl bg-primary py-10 text-center text-primary-foreground lg:flex lg:flex-col lg:justify-center lg:py-16">
           <div className="mx-auto max-w-xs px-8">
             {priceTitle &&
               <div className='flex items-center justify-center gap-x-1 text-base font-semibold'>

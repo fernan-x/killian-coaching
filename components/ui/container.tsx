@@ -1,8 +1,22 @@
-const Container = ({ children, ...props }: React.PropsWithChildren) => {
+import { cn } from "@/lib/utils";
+
+interface ContainerProps extends React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
+  fitContent?: boolean;
+  noBg?: boolean;
+  noPadding?: boolean;
+}
+
+const Container = ({ children, fitContent = false, noBg = false, noPadding = false, ...props }: ContainerProps) => {
   return (
     <div
-      className="min-h-[300px] w-screen flex flex-col items-center gap-9 p-12 bg-[#F3F7FF] even:bg-white"
       {...props}
+      className={cn(
+        "w-screen flex flex-col items-center gap-9",
+        props.className,
+        fitContent ? "h-fit" : "min-h-[300px]",
+        noBg ? "" : "bg-[#F3F7FF] even:bg-white",
+        noPadding ? "" : "py-12 px-28",
+      )}
     >
       {children}
     </div>

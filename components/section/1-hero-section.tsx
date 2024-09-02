@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { H1, Paragraph } from "../ui/text";
 import MailToButton from "../ui/mail-to-button";
 import { FlipWords } from "../common/flip-words";
+import CTAButton from "../ui/cta-button";
 
 const HeroSection = () => {
 
@@ -26,7 +27,7 @@ const HeroSection = () => {
           Avec un coach à domicile
           <FlipWords words={['diplomé d\'état', 'affilié service à la personne']}/>
         </Paragraph>
-        <MailToButton className='w-fit'>Réserver une séance d&apos;essai</MailToButton>
+        <CTAButton className='w-fit'>Réserver une séance d&apos;essai</CTAButton>
       </div>
     </div>
   );

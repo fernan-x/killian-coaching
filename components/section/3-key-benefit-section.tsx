@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Container from "../ui/container";
-import { H2, H3, Paragraph } from "../ui/text";
-import MailToButton from '../ui/mail-to-button';
+import { H3, Paragraph } from "../ui/text";
 import ProgramPicture from "@/assets/images/program.jpg";
 import NoEquipmentPicture from "@/assets/images/no-equipment.jpg";
 import CoachingPicture from "@/assets/images/coach-explanation.jpeg";
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { twMerge } from 'tailwind-merge';
+import CTAButton from '../ui/cta-button';
 
 interface KeyBenefitSectionRowProps {
   picture: string | StaticImport;
@@ -17,49 +17,49 @@ interface KeyBenefitSectionRowProps {
 }
 
 const KeyBenefitSectionRow = ({ picture, pictureAlt, title, content, additionalPictureClass }: KeyBenefitSectionRowProps) => {
-  return <div className='flex w-full gap-6 p-12 items-center flex-row even:flex-row-reverse lg:flex-col lg:even:flex-col'>
-    <div className='flex-1 flex min-h-60 w-60 relative'>
-      <Image src={picture} fill alt={pictureAlt} className={twMerge('rounded-md shadow-md object-cover', additionalPictureClass)} />
+  return <div className='relative rounded-lg min-h-[300px] lg:min-w-[300px] lg:h-[500px] flex justify-end'>
+    <div className='flex gap-6 flex-col justify-end flex-1 z-[2] relative p-12 bg-gradient-to-t from-black from-10% rounded-lg'>
+      <H3 contrast>{title}</H3>
+      <Paragraph contrast>{content}</Paragraph>
     </div>
-    <div className='flex gap-6 flex-col flex-1'>
-      <H3>{title}</H3>
-      <Paragraph>{content}</Paragraph>
+    <div className='absolute top-0 left-0 w-full h-full z-[1] rounded-lg'>
+      <Image src={picture} fill alt={pictureAlt} className={twMerge('rounded-lg shadow-md object-cover', additionalPictureClass)} />
     </div>
   </div>
 }
 
 const KeyBenefitSection = () => {
-  return <Container>
-    <div className="flex flex-col justify-center items-center text-center gap-3">
-      <H2>Je suis là pour vous aider</H2>
-      <Paragraph>Avec un coaching personnalisé et qui s&apos;adapte à vos besoins</Paragraph>
-    </div>
-    <div className='flex flex-col lg:flex-row gap-16 mt-6 mb-6'>
-      <KeyBenefitSectionRow
-        picture={NoEquipmentPicture}
-        pictureAlt='Equipements sportifs au sol'
-        title={`Pas besoin d'équipement`}
-        content='Le fit truck est tout équipé! Je me déplace avec les poids, tapis, élastiques, chrono et autres.'
-      />
-      <KeyBenefitSectionRow
-        picture={ProgramPicture}
-        pictureAlt='Calpin avec un crayon posé dessus'
-        title={`Programme 100% personnalisé`}
-        content={`Nous construisons le programme ensemble, à l'aide d'un questionnaire complet et d'échanges. Et il évolue selon vos besoins. Programme aussi alimentaire et conseils.`}
-        additionalPictureClass='object-[50%_bottom]'
-      />
-      <KeyBenefitSectionRow
-        picture={CoachingPicture}
-        pictureAlt='Killian motivant une personne faisant de la corde'
-        title='A domicile, à distance, rien ne change'
-        content='Nous communiquons en dehors des séances par messagerie, je fais des retours sur les vidéos des coaching a distance, je ne donne pas juste une programme.'
-        additionalPictureClass='object-[50%_35%] md:object-[50%_40%]'
-      />
-    </div>
-    <div className="flex flex-col justify-center items-center text-center">
-      <MailToButton>Séance découverte offerte</MailToButton>
-    </div>
-  </Container>;
+  return <>
+    <Container className='bg-primary' noBg>
+      {/* <div className="flex flex-col justify-center items-center text-center gap-3">
+        <H2>Je suis là pour vous aider</H2>
+        <Paragraph>Avec un coaching personnalisé et qui s&apos;adapte à vos besoins</Paragraph>
+      </div> */}
+      <div className='flex flex-col lg:flex-row justify-around gap-6 mt-6 mb-6 w-full'>
+        <KeyBenefitSectionRow
+          picture={NoEquipmentPicture}
+          pictureAlt='Equipements sportifs au sol'
+          title={`Pas besoin d'équipement`}
+          content='Le fit truck est tout équipé! Je me déplace avec les poids, tapis, élastiques, chrono et autres.'
+        />
+        <KeyBenefitSectionRow
+          picture={ProgramPicture}
+          pictureAlt='Calpin avec un crayon posé dessus'
+          title={`Programme 100% personnalisé`}
+          content={`Nous construisons le programme ensemble, à l'aide d'un questionnaire complet et d'échanges.`}
+        />
+        <KeyBenefitSectionRow
+          picture={CoachingPicture}
+          pictureAlt='Killian motivant une personne faisant de la corde'
+          title='A domicile, à distance, rien ne change'
+          content='Nous communiquons en dehors des séances par messagerie, je ne donne pas juste une programme.'
+        />
+      </div>
+    </Container>
+    <Container fitContent noBg noPadding className='bg-primary pb-12'>
+      <CTAButton>Séance découverte offerte</CTAButton>
+    </Container>
+  </>;
 };
 
 export default KeyBenefitSection;
