@@ -1,5 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import Container from "../ui/container";
+import CTAButton from "../ui/cta-button";
 import MailToButton from "../ui/mail-to-button";
 import { H2 } from "../ui/text";
 
@@ -61,7 +62,7 @@ const FAQElements: FAQElement[] = [
 ]
 
 const FAQSection = () => {
-  return <Container>
+  return <Container bg="white">
     <H2>FAQ</H2>
     <Accordion type="single" collapsible className="w-full md:w-3/4">
     {FAQElements.map(elem => (
@@ -73,7 +74,7 @@ const FAQSection = () => {
       </AccordionItem>
     ))}
     </Accordion>
-    <MailToButton>Réserver une séance d&apos;essai</MailToButton>
+    <CTAButton>Réserver une séance d&apos;essai</CTAButton>
   </Container>;
 };
 
