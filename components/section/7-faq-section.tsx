@@ -62,7 +62,7 @@ const FAQElements: FAQElement[] = [
 ]
 
 const FAQSection = () => {
-  return <Container noBg className="bg-[#F3F7FF]">
+  return <Container bg="white">
     <H2>FAQ</H2>
     <Accordion type="single" collapsible className="w-full md:w-3/4">
     {FAQElements.map(elem => (

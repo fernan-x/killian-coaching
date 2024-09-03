@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Container from "../ui/container";
 import { H3, Paragraph } from "../ui/text";
-import ProgramPicture from "@/assets/images/program.jpg";
+// import ProgramPicture from "@/assets/images/program.jpg";
+import ProgramPicture from "@/assets/images/coach-plank-indoor.jpg";
 import NoEquipmentPicture from "@/assets/images/no-equipment.jpg";
 import CoachingPicture from "@/assets/images/coach-explanation.jpeg";
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
@@ -41,18 +42,21 @@ const KeyBenefitSection = () => {
           pictureAlt='Equipements sportifs au sol'
           title={`Pas besoin d'équipement`}
           content='Le fit truck est tout équipé! Je me déplace avec les poids, tapis, élastiques, chrono et autres.'
+          additionalPictureClass='object-bottom'
         />
         <KeyBenefitSectionRow
           picture={ProgramPicture}
           pictureAlt='Calpin avec un crayon posé dessus'
           title={`Programme 100% personnalisé`}
           content={`Nous construisons le programme ensemble, à l'aide d'un questionnaire complet et d'échanges.`}
+          additionalPictureClass='object-[50%_60%] lg:object-[50%_70%]'
         />
         <KeyBenefitSectionRow
           picture={CoachingPicture}
           pictureAlt='Killian motivant une personne faisant de la corde'
           title='A domicile, à distance, rien ne change'
           content='Nous communiquons en dehors des séances par messagerie, je ne donne pas juste une programme.'
+          additionalPictureClass='object-[50%_40%] lg:object-[50%_50%]'
         />
       </div>
     </Container>

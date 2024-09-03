@@ -49,7 +49,7 @@ const PricingCard = ({ anchor, title, description, price, features, frequency, p
                 <span className="text-sm font-semibold leading-6 tracking-wide">{frequency}</span>
               </p>
             }
-            <MailToButton className='mt-10' variant='pricing'>{buttonText}</MailToButton>
+            <MailToButton className='mt-10' variant='secondary'>{buttonText}</MailToButton>
             {subTitle &&
               <span className="mt-6 text-xs leading-5">
                 {subTitle}

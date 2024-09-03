@@ -17,7 +17,7 @@ const BeforeAfterCard = ({
   badges,
   title,
 }: BeforeAfterCardProps) => {
-  return <div className='flex flex-col-reverse lg:flex-row gap-6 lg:gap-20 items-center justify-center w-full px-20'>
+  return <div className='flex flex-col-reverse lg:flex-row gap-6 lg:gap-20 items-center justify-center w-full lg:px-20'>
     <div className='flex flex-col gap-6'>
       <H3>{title}</H3>
       {badges && <div className='flex gap-3 items-center flex-wrap'>

@@ -16,7 +16,7 @@ const Container = ({ children, fitContent = false, bg = 'white', noPadding = fal
         props.className,
         fitContent ? "h-fit" : "min-h-[300px]",
         bg === 'white' ? "bg-white" : (bg === 'dark' ? "bg-primary" : "bg-[#F3F7FF]"),
-        noPadding ? "" : "py-12 px-28",
+        noPadding ? "" : "py-12 px-6 md:px-28",
       )}
     >
       {children}

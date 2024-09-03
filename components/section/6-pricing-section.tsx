@@ -1,43 +1,35 @@
 import React from 'react';
 import Container from '../ui/container';
-import { H2, H4, Paragraph } from '../ui/text';
-import { Button } from '../ui/button';
-
-interface PricingCardProps {
-    title: string;
-    price: string;
-}
-
-const PricingCard = ({
-    title,
-    price,
-}: PricingCardProps) => {
-    return <div className='ring-1 ring-white p-6 rounded-lg relative flex flex-col gap-6 w-[250px] h-[300px]'>
-        <H4 contrast className='text-center'>{title}</H4>
-        <Paragraph contrast className='!text-3xl flex flex-1 items-center justify-center'>{price}</Paragraph>
-        <Button variant='secondary'>Réserver</Button>
-    </div>;
-};
+import { H2 } from '../ui/text';
+import HomePagePricingCard from '../common/homepage-pricing-card';
 
 const PricingSection = () => {
   return <Container bg='dark'>
     <H2 contrast>Mes différentes offres</H2>
     <div className='flex flex-row gap-12 items-center justify-center flex-wrap'>
-        <PricingCard
+        <HomePagePricingCard
             title='Coaching à domicile'
-            price='36€ / séance'
+            price='36€'
+            frequency='/ séance'
+            redirectUrl='/coaching#domicile'
         />
-        <PricingCard
+        <HomePagePricingCard
             title='Coaching à distance'
-            price='65€ / mois'
+            price='65€'
+            frequency='/ mois'
+            redirectUrl='/coaching#distance'
         />
-        <PricingCard
+        <HomePagePricingCard
             title='Coaching en groupe'
-            price='10€ / personne'
+            price='10€'
+            frequency='/ personne'
+            redirectUrl='/coaching#groupe'
         />
-        <PricingCard
+        <HomePagePricingCard
             title='Coaching en entreprise'
-            price='Sur devis'
+            price='Sur&nbsp;devis'
+            redirectUrl='/coaching#entreprise'
+            fixedPrice
         />
     </div>
   </Container>;
