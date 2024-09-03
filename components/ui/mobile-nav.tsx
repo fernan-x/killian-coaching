@@ -2,6 +2,8 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "./link";
+import { MAIL_TO } from "@/hooks/useMailTo";
 
 type MobileNavItemProps = {
     onClick: (e: React.MouseEvent<HTMLSpanElement>) => void;
@@ -56,7 +58,7 @@ const MobileNav = () => {
         <MobileNavItem onClick={onHandleRedirect} redirectUrl="/">Accueil</MobileNavItem>
         <MobileNavItem onClick={onHandleRedirect} redirectUrl="/coaching">Coaching</MobileNavItem>
         <MobileNavItem onClick={onHandleRedirect} redirectUrl="/fit-truck">Fit Truck</MobileNavItem>
-        <Link href={MAIL_TO}>Contact</Link>
+        <Link to={MAIL_TO}>Contact</Link>
     </div>
     </div>;
 };
