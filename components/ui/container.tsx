@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import FadeOnAppear from "../common/fade-on-appear";
 
 interface ContainerProps extends React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
   fitContent?: boolean;
@@ -9,7 +10,7 @@ interface ContainerProps extends React.PropsWithChildren<React.HTMLAttributes<HT
 
 const Container = ({ children, fitContent = false, bg = 'white', noPadding = false, ...props }: ContainerProps) => {
   return (
-    <div
+    <FadeOnAppear
       {...props}
       className={cn(
         "w-screen flex flex-col items-center gap-9",
@@ -20,7 +21,7 @@ const Container = ({ children, fitContent = false, bg = 'white', noPadding = fal
       )}
     >
       {children}
-    </div>
+    </FadeOnAppear>
   );
 };
 
