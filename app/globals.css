@@ -2,8 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* https://www.palettedecouleur.net/ */
+
 @layer base {
   :root {
+    --palette-yellow: #E1A624;
+    --palette-blue: #317AC1;
+    --palette-black: #384454;
+    --palette-grey: #D4D3DC;
+    --palette-brown: #AD956B;
+
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 

@@ -21,7 +21,7 @@ const Nav = () => {
           <ul className={"hidden flex-1 justify-end gap-12 md:flex text-[#E7F3FF]"}>
             {/* TODO : Hover animation */}
             <li><Link href="/coaching">Coaching</Link></li>
-            <li><Link href="/fit-truck">Fit Truck</Link></li>
+            {/* <li><Link href="/fit-truck">Fit Truck</Link></li> */}
             <li><Link href={MAIL_TO}>Contact</Link></li>
           </ul>
         </div>

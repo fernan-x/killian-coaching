@@ -5,30 +5,26 @@ import HomePagePricingCard from '../common/homepage-pricing-card';
 
 const PricingSection = () => {
   return <Container bg='dark'>
-    <H2 contrast>Mes différentes offres</H2>
+    <H2 contrast className='uppercase'>Mes différentes offres</H2>
     <div className='flex flex-row gap-12 items-center justify-center flex-wrap'>
         <HomePagePricingCard
-            title='Coaching à domicile'
+            title='Séance découverte'
+            startingAtLabel='Première séance'
+            price='Offerte'
+        />
+        <HomePagePricingCard
+            title='1 séance hebdomadaire'
             price='36€'
             frequency='/ séance'
-            redirectUrl='/coaching#domicile'
         />
         <HomePagePricingCard
-            title='Coaching à distance'
-            price='65€'
-            frequency='/ mois'
-            redirectUrl='/coaching#distance'
-        />
-        <HomePagePricingCard
-            title='Coaching en groupe'
-            price='10€'
-            frequency='/ personne'
-            redirectUrl='/coaching#groupe'
+            title='2 séances hebdomadaires'
+            price='30€'
+            frequency='/ séance'
         />
         <HomePagePricingCard
             title='Coaching en entreprise'
             price='Sur&nbsp;devis'
-            redirectUrl='/coaching#entreprise'
             fixedPrice
         />
     </div>

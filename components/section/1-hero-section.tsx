@@ -22,7 +22,7 @@ const HeroSection = () => {
       </div>
       <div className="absolute h-full w-full bg-gradient-to-r from-black md:from-10%"/>
       <div className="absolute flex flex-col gap-9 justify-center h-full w-full md:w-1/2 p-20">
-        <H1 contrast>Atteignez vos objectifs physiques</H1>
+        <H1 contrast className='uppercase'>Atteignez vos objectifs physiques</H1>
         <Paragraph contrast className='text-xl'>
           Avec un coach à domicile
           <FlipWords words={['diplomé d\'état', 'affilié service à la personne']}/>

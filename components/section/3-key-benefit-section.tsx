@@ -54,7 +54,7 @@ const KeyBenefitSection = () => {
         <KeyBenefitSectionRow
           picture={CoachingPicture}
           pictureAlt='Killian motivant une personne faisant de la corde'
-          title='A domicile, à distance, rien ne change'
+          title='À domicile, à distance, rien ne change'
           content='Nous communiquons en dehors des séances par messagerie, je ne donne pas juste une programme.'
           additionalPictureClass='object-[50%_40%] lg:object-[50%_50%]'
         />

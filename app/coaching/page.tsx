@@ -17,9 +17,9 @@ export default function Coaching() {
           <Link href='#distance'>
             À distance
           </Link>
-          <Link href='#groupe'>
+          {/* <Link href='#groupe'>
             En groupe
-          </Link>
+          </Link> */}
           <Link href='#entreprise'>
             En entreprise
           </Link>
@@ -55,7 +55,7 @@ export default function Coaching() {
           frequency='/ mois'
           subTitle="Prix dégressif selon engagement"
         />
-        <PricingCard
+        {/* <PricingCard
           anchor="groupe"
           title="Coaching en groupe"
           description="Pour celles et ceux qui préfèrent rester en petit comité, je propose aussi une formule de coaching en groupe à domicile, en extérieur.
@@ -69,7 +69,7 @@ export default function Coaching() {
           ]}
           frequency='/ personne'
           subTitle="Prix dégressif selon le nombre de participants"
-        />
+        /> */}
          <PricingCard
           anchor="entreprise"
           title="Coaching en entreprise"
