@@ -22,7 +22,7 @@ const BeforeAfterSection = () => {
         <CarouselContent>
             <CarouselItem>
                 <BeforeAfterCard
-                    title='Coline'
+                    title='Coline - 21 ans'
                     picture={BeforeAfterColine}
                     badges={['3 mois', 'Recomposition corporelle: -1kg', 'Taille: -4cm', 'Hanche: -4cm']}
                     content='Coline a choisi le coaching a domicile afin de se motiver et
@@ -31,7 +31,7 @@ const BeforeAfterSection = () => {
             </CarouselItem>
             <CarouselItem>
                 <BeforeAfterCard
-                    title='Mathieu'
+                    title='Mathieu - 23 ans'
                     picture={BeforeAfterMathieu}
                     badges={['8 mois', 'Poid: -14kg', 'Taille: -9cm', 'Hanche: -10cm']}
                     content='Mathieu a choisi un coaching à distance qui correspond mieux à son mode de vie.
