@@ -25,7 +25,9 @@ const HeroSection = () => {
         <H1 contrast className='uppercase'>Atteignez vos objectifs physiques</H1>
         <Paragraph contrast className='text-xl'>
           Avec un coach à domicile
-          <FlipWords words={['diplomé d\'état', 'affilié service à la personne']}/>
+          <FlipWords
+            duration={2500}
+            words={['certifié et diplômé d\'État', 'selon vos horaires et à votre rythme', 'affilié service à la personne']}/>
         </Paragraph>
         <CTAButton className='w-fit'>Réserver une séance d&apos;essai</CTAButton>
       </div>
