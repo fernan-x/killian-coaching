@@ -18,7 +18,7 @@ interface KeyBenefitSectionRowProps {
 }
 
 const KeyBenefitSectionRow = ({ picture, pictureAlt, title, content, additionalPictureClass }: KeyBenefitSectionRowProps) => {
-  return <div className='relative rounded-lg min-h-[300px] lg:min-w-[300px] lg:h-[500px] flex justify-end'>
+  return <div className='relative rounded-lg min-h-[300px] lg:min-w-[300px] lg:h-[500px] flex justify-end shadow-md'>
     <div className='flex gap-6 flex-col justify-end flex-1 z-[2] relative p-12 bg-gradient-to-t from-black from-10% lg:to-60% rounded-lg'>
       <H3 contrast>{title}</H3>
       <Paragraph contrast>{content}</Paragraph>

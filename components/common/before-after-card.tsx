@@ -25,7 +25,7 @@ const BeforeAfterCard = ({
       </div>}
       <Paragraph>{content}</Paragraph>
     </div>
-    <Image src={picture} width={300} height={300} alt='Before after picture' className='rounded-lg' />
+    <Image src={picture} width={300} height={300} alt='Before after picture' className='rounded-lg shadow-md object-cover' />
   </div>;
 };
 
