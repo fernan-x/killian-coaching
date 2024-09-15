@@ -17,7 +17,7 @@ import {
 
 const BeforeAfterSection = () => {
   return <Container>
-    <H2 className='uppercase'>Ils me font confiance pour leur santé</H2>
+    <H2 className='uppercase text-center lg:text-left'>Ils me font confiance pour leur santé</H2>
     <Carousel className='w-full py-9'>
         <CarouselContent>
             <CarouselItem>

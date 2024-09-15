@@ -5,7 +5,7 @@ import HomePagePricingCard from '../common/homepage-pricing-card';
 
 const PricingSection = () => {
   return <Container bg='dark'>
-    <H2 contrast className='uppercase'>Mes différentes offres</H2>
+    <H2 contrast className='uppercase text-center lg:text-left'>Mes différentes offres</H2>
     <div className='flex flex-row gap-12 items-center justify-center flex-wrap'>
         <HomePagePricingCard
             title='Séance découverte'

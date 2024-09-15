@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Container from "../ui/container";
 import { H3, Paragraph } from "../ui/text";
 // import ProgramPicture from "@/assets/images/program.jpg";
-import ProgramPicture from "@/assets/images/coach-plank-indoor.jpg";
-import NoEquipmentPicture from "@/assets/images/no-equipment.jpg";
+import ProgramPicture from "@/assets/images/program.jpeg";
+import NoEquipmentPicture from "@/assets/images/no-equipment.jpeg";
 import CoachingPicture from "@/assets/images/coach-explanation.jpeg";
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { twMerge } from 'tailwind-merge';
@@ -19,7 +19,7 @@ interface KeyBenefitSectionRowProps {
 
 const KeyBenefitSectionRow = ({ picture, pictureAlt, title, content, additionalPictureClass }: KeyBenefitSectionRowProps) => {
   return <div className='relative rounded-lg min-h-[300px] lg:min-w-[300px] lg:h-[500px] flex justify-end'>
-    <div className='flex gap-6 flex-col justify-end flex-1 z-[2] relative p-12 bg-gradient-to-t from-black from-10% rounded-lg'>
+    <div className='flex gap-6 flex-col justify-end flex-1 z-[2] relative p-12 bg-gradient-to-t from-black from-10% lg:to-60% rounded-lg'>
       <H3 contrast>{title}</H3>
       <Paragraph contrast>{content}</Paragraph>
     </div>
@@ -42,14 +42,14 @@ const KeyBenefitSection = () => {
           pictureAlt='Equipements sportifs au sol'
           title={`Pas besoin d'équipement`}
           content='Le fit truck est tout équipé! Je me déplace avec les poids, tapis, élastiques, chrono et autres.'
-          additionalPictureClass='object-bottom'
+          additionalPictureClass='object-[50%_60%] lg:object-bottom'
         />
         <KeyBenefitSectionRow
           picture={ProgramPicture}
           pictureAlt='Calpin avec un crayon posé dessus'
           title={`Programme 100% personnalisé`}
           content={`Nous construisons le programme ensemble, à l'aide d'un questionnaire complet et d'échanges.`}
-          additionalPictureClass='object-[50%_60%] lg:object-[50%_70%]'
+          additionalPictureClass='object-[50%_55%] lg:object-[50%_70%]'
         />
         <KeyBenefitSectionRow
           picture={CoachingPicture}
@@ -59,8 +59,6 @@ const KeyBenefitSection = () => {
           additionalPictureClass='object-[50%_40%] lg:object-[50%_50%]'
         />
       </div>
-    </Container>
-    <Container fitContent noPadding className='bg-primary pb-12' bg='dark'>
       <CTAButton>Séance découverte offerte</CTAButton>
     </Container>
   </>;
