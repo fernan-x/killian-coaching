@@ -18,7 +18,7 @@ import {
 const BeforeAfterSection = () => {
   return <Container>
     <H2 className='uppercase text-center lg:text-left'>Ils me font confiance pour leur santé</H2>
-    <Carousel className='w-full py-9'>
+    <Carousel className='w-full'>
         <CarouselContent>
             <CarouselItem>
                 <BeforeAfterCard
@@ -60,8 +60,15 @@ const BeforeAfterSection = () => {
                 />
             </CarouselItem>
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+
+        <div className='relative flex justify-around mt-6 md:hidden'>
+            <CarouselPrevious variant='link' noTranslate />
+            <CarouselNext variant='link' noTranslate />
+        </div>
+        <div className='hidden md:flex'>
+            <CarouselPrevious variant='link' />
+            <CarouselNext variant='link' />
+        </div>
     </Carousel>
   </Container>;
 };
