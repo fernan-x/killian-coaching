@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const FadeOnAppear = ({ children, ...props }: React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>) => {
     const { isIntersecting, ref } = useIntersectionObserver({
-        threshold: 0.5,
+        threshold: 0.1,
         freezeOnceVisible: true,
     })
 

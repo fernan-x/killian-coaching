@@ -67,7 +67,7 @@ const MobileNav = () => {
       className={`fixed w-full ${isOpen ? 'bg-primary' : 'bg-[#000229]/40'} backdrop-blur p-6 items-center gap-12 z-20 top-0 start-0 h-20 md:hidden flex`}
     >
       <div className="flex-1 flex items-center gap-12">
-        <Link href="/" className="ml-12">
+        <Link href="/" className="lg:ml-12">
           <Image src={Logo} alt="Killian coaching logo" height={50} />
         </Link>
       </div>
