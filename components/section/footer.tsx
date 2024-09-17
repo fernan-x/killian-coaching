@@ -1,18 +1,21 @@
+import { Instagram } from 'lucide-react';
 import React from 'react';
-import { H4 } from '../ui/text';
+import NavLink from '../ui/nav-link';
+import { MAIL_TO } from '@/hooks/useMailTo';
 
 const Footer = () => {
-    return <footer className="flex flex-col p-12 gap-9 bg-primary text-primary-foreground">
-        <H4 contrast>Killian Coaching</H4>
-        <div className='flex flex-col md:flex-row gap-9'>
-            <div className='flex-1 flex flex-col gap-4'>
-                <span>Coaching</span>
-                <span>Ma solution Fit Truck</span>
-                <span>Mention légales</span>
-            </div>
-            <div className='flex-1'>
-                Me retrouver au quotidien sur instagram
-            </div>
+    const year = new Date().getFullYear();
+    return <footer className="flex flex-col items-center py-12 px-6 md:px-28 gap-6 bg-primary text-primary-foreground">
+        <div className='flex flex-row gap-6 flex-wrap'>
+            <NavLink href='/coaching'>Coaching</NavLink>
+            {/* <NavLink href='/fit-truck'>Fit Truck</NavLink> */}
+            <NavLink href={MAIL_TO}>Contact</NavLink>
+            <NavLink href='https://www.instagram.com/killian_coaching/' target="_blank">
+                <Instagram size={24} className="text-primary-foreground" />
+            </NavLink>
+        </div>
+        <div className='text-sm'>
+            © {year} Killian Coaching, Fit truck. All rights reserved.
         </div>
     </footer>;
 };

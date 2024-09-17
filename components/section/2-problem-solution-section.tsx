@@ -5,8 +5,8 @@ import KillianPicture from "@/assets/images/killian-presentation.jpg";
 
 const ProblemSolutionSection = () => {
   return <Container>
-    <div className="flex flex-1 gap-12 items-center justify-center flex-col lg:flex-row">
-      <div className="flex-1 flex justify-center">
+    <div className="flex flex-1 gap-12 items-start justify-center flex-col lg:flex-row">
+      <div className="flex-1 flex justify-center lg:sticky lg:top-24">
         {/* <video className="max-h-[440px] w-auto rounded-lg" controls>
           <source src={`/${BASE_PATH}problem-solution.webm`} type="video/webm" />
           <track
