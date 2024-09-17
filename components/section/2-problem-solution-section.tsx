@@ -1,12 +1,11 @@
-import { BASE_PATH } from "@/lib/constants";
 import Container from "@/components/ui/container";
-import { H2, H3, H4 } from "../ui/text";
+import { H2 } from "../ui/text";
 import Image from "next/image";
 import KillianPicture from "@/assets/images/killian-presentation.jpg";
 
 const ProblemSolutionSection = () => {
   return <Container>
-    <div className="flex flex-1 gap-12 p-12 items-center justify-center flex-col lg:flex-row">
+    <div className="flex flex-1 gap-12 items-center justify-center flex-col lg:flex-row">
       <div className="flex-1 flex justify-center">
         {/* <video className="max-h-[440px] w-auto rounded-lg" controls>
           <source src={`/${BASE_PATH}problem-solution.webm`} type="video/webm" />
