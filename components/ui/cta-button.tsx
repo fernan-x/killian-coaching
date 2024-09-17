@@ -9,7 +9,7 @@ const CTAButton = ({children, className, ...props}: React.PropsWithChildren<Reac
     return <button
         className={cn(
             className,
-            'rounded-lg text-xl bg-[#4EC2E8] text-primary-foreground py-3 px-6 hover:opacity-90',
+            'rounded-lg text-xl bg-cta text-primary-foreground py-3 px-6 hover:opacity-90',
         )}
         onClick={onMailTo}
         {...props}
