@@ -51,9 +51,9 @@ const PricingCard = ({ anchor, title, description, price, features, frequency, p
             }
             <MailToButton className='mt-10' variant='secondary'>{buttonText}</MailToButton>
             {subTitle &&
-              <span className="mt-6 text-xs leading-5">
+              <div className="mt-6 text-xs leading-5">
                 {subTitle}
-              </span>
+              </div>
             }
           </div>
         </div>
