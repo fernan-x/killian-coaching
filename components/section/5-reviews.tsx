@@ -8,7 +8,7 @@ import GoogleLogo from '@/assets/images/google-reviews-logo.png';
 import Link from '../ui/link';
 
 const ReviewSection = () => {
-    return <Container bg='light'>
+    return <Container bg='light' className='gap-2'>
         <H2 className='uppercase text-center lg:text-left'>Et voici ce qu&apos;ils en pensent</H2>
         <Image src={GoogleLogo} height={100} alt='logo google' />
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
