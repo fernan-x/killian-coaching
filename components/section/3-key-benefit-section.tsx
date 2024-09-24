@@ -59,7 +59,7 @@ const KeyBenefitSection = () => {
           additionalPictureClass='object-[50%_40%] lg:object-[50%_50%]'
         />
       </div>
-      <CTAButton>Séance découverte offerte</CTAButton>
+      <CTAButton contrast>Séance découverte offerte</CTAButton>
     </Container>
   </>;
 };

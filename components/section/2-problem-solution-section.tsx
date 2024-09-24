@@ -21,7 +21,7 @@ const ProblemSolutionSection = () => {
         <Image src={KillianPicture} alt='Killian devant son fit truck' className='rounded-lg shadow-md object-cover' />
       </div>
       <div className="flex-1 flex flex-col gap-6">
-        <H2 className='uppercase text-primary'>Commencez demain !</H2>
+        <H2 className='uppercase text-primary'>Pourquoi commencer demain ?</H2>
         <p className='text-lg flex flex-col gap-2'>
           <span>Vous avez du mal à rester motivé et à maintenir une routine d&apos;entraînement ?</span>
           <span>Vous vous donnez à fond, mais les résultats tardent à apparaître ?</span>
