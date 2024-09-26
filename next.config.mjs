@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/killian-coaching',
+  basePath: process.env.NEXT_CUSTOM_BASE_PATH || '',
 };
 
 export default nextConfig;
