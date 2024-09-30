@@ -23,7 +23,7 @@
     --popover-foreground: 222.2 84% 4.9%;
 
     /* --primary: #010658; */
-    --cta-button: var(--palette-yellow);
+    --cta-button: var(--palette-blue);
     --primary: var(--palette-blue);
     --primary-hover: #206bb6;
     --primary-foreground: 210 40% 98%;

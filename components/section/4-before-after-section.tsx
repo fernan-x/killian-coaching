@@ -2,7 +2,7 @@ import React from 'react';
 import { H2 } from '../ui/text';
 import Container from '../ui/container';
 import BeforeAfterCard from '../common/before-after-card';
-import BeforeAfterColine from '@/assets/images/before-after-coline.png';
+import BeforeAfterColyne from '@/assets/images/before-after-colyne.png';
 import BeforeAfterMathieu from '@/assets/images/before-after-mathieu.png';
 import BeforeAfterSebastien from '@/assets/images/before-after-sebastien.png';
 import BeforeAfterKylian from '@/assets/images/before-after-kylian.png';
@@ -22,8 +22,8 @@ const BeforeAfterSection = () => {
         <CarouselContent>
             <CarouselItem>
                 <BeforeAfterCard
-                    title='Coline - 21 ans'
-                    picture={BeforeAfterColine}
+                    title='Colyne - 21 ans'
+                    picture={BeforeAfterColyne}
                     badges={['3 mois', 'Recomposition corporelle: -1kg', 'Taille: -4cm', 'Hanche: -4cm']}
                     content='Coline a choisi le coaching a domicile afin de se motiver et
                     de s&apos;assurer un suivi de proximité pour débuter une nouvelle pratique sportive.'

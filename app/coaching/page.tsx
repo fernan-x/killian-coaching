@@ -17,9 +17,6 @@ export default function Coaching() {
           <Link href='#distance' className="bg-primary hover:bg-primary-hover text-primary-foreground px-4 py-2 rounded-full">
             À distance
           </Link>
-          {/* <Link href='#groupe'>
-            En groupe
-          </Link> */}
           <Link href='#entreprise' className="bg-primary hover:bg-primary-hover text-primary-foreground px-4 py-2 rounded-full">
             En entreprise
           </Link>
@@ -45,7 +42,7 @@ export default function Coaching() {
           title="Coaching à distance"
           description="Profitez d'un programme d'entrainement personnalisé pour atteindre vos objectifs?"
           priceTitle="À partir de"
-          price="65€"
+          price="85€"
           features={[
             `Plan d'entrainements personnalisé`,
             'Plan nutritionel adapté à votre objectif',
@@ -55,21 +52,6 @@ export default function Coaching() {
           frequency='/ mois'
           subTitle="Prix dégressif selon engagement"
         />
-        {/* <PricingCard
-          anchor="groupe"
-          title="Coaching en groupe"
-          description="Pour celles et ceux qui préfèrent rester en petit comité, je propose aussi une formule de coaching en groupe à domicile, en extérieur.
-          Entraînez-vous avec vos amis(es) pour plus de fun et de plaisir !"
-          priceTitle="À partir de"
-          price="10€"
-          features={[
-            `Séance adaptée aux pratiquants`,
-            'Correction des postures lors de la séance',
-            'Conseils personnalisés',
-          ]}
-          frequency='/ personne'
-          subTitle="Prix dégressif selon le nombre de participants"
-        /> */}
          <PricingCard
           anchor="entreprise"
           title="Coaching en entreprise"

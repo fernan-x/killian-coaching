@@ -3,6 +3,9 @@ import { H2 } from "../ui/text";
 import Image from "next/image";
 import KillianPicture from "@/assets/images/killian-presentation.jpg";
 
+const START_COACHING_YEAR = 2021;
+const yearExperience = new Date().getFullYear() - START_COACHING_YEAR;
+
 const ProblemSolutionSection = () => {
   return <Container>
     <div className="flex flex-1 gap-12 items-start justify-center flex-col lg:flex-row">
@@ -29,7 +32,7 @@ const ProblemSolutionSection = () => {
         </p>
         <span className="text-lg text-primary"><b>Vous n&apos;êtes pas seul !</b></span>
         <p className='text-md flex flex-col gap-2'>
-          <span>Avec plus de 5 ans d&apos;expérience et un large éventail de formules de coaching personnalisées, je suis là pour vous guider, vous recentrer et vous donner la motivation nécessaire pour atteindre vos objectifs.</span>
+          <span>Avec plus de {yearExperience} ans d&apos;expérience et un large éventail de formules de coaching personnalisées, je suis là pour vous guider, vous recentrer et vous donner la motivation nécessaire pour atteindre vos objectifs.</span>
           <span>Grâce à mon fit truck, tout le matériel dont vous avez besoin vient à vous — plus d&apos;excuses pour ne pas vous entraîner !</span>
         </p>
         <p className='text-md'>
