@@ -25,7 +25,7 @@ const BeforeAfterSection = () => {
                     title='Colyne - 21 ans'
                     picture={BeforeAfterColyne}
                     badges={['3 mois', 'Recomposition corporelle: -1kg', 'Taille: -4cm', 'Hanche: -4cm']}
-                    content='Coline a choisi le coaching a domicile afin de se motiver et
+                    content='Colyne a choisi le coaching à domicile afin de se motiver et
                     de s&apos;assurer un suivi de proximité pour débuter une nouvelle pratique sportive.'
                 />
             </CarouselItem>

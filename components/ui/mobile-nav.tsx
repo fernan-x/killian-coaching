@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./button";
 import { Menu, XIcon } from "lucide-react";
-import Logo from "@/assets/images/logo-white.png";
+import Logo from "@/assets/images/logo-fit-truck-cropped.png";
 import useIsMobile from "@/hooks/useIsMobile";
 import CTAButton from "./cta-button";
 

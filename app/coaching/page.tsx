@@ -26,7 +26,7 @@ export default function Coaching() {
           anchor="domicile"
           title="Coaching à domicile"
           description="Profitez d'un accompagnement personnalisé, adapté à votre emploi du temps.
-          Atteignez vos objectifs physique avec l'aide d'un coach diplômé d'état directement à domicile."
+          Atteignez vos objectifs physiques avec l'aide d'un coach diplômé d'état directement à domicile."
           priceTitle="Après déduction d&apos;impôt"
           price="30€"
           features={[
@@ -40,7 +40,7 @@ export default function Coaching() {
         <PricingCard
           anchor="distance"
           title="Coaching à distance"
-          description="Profitez d'un programme d'entrainement personnalisé pour atteindre vos objectifs?"
+          description="Profitez d'un programme d'entrainement personnalisé pour atteindre vos objectifs."
           priceTitle="À partir de"
           price="85€"
           features={[
@@ -56,7 +56,7 @@ export default function Coaching() {
           anchor="entreprise"
           title="Coaching en entreprise"
           description="Vous êtes dirigeant d'une entreprise ou délégué du personnel, offrez aux salariés la possibilité de se dépenser et de se détendre au sein de l'entreprise.
-          Au-delà des bénéfices évident du sport sur la santé tel que la prévention des troubles du sommeil, cardio-vasculaires ou musculo-squelettiques; le sport en entreprise offre de nombreux avantages et enjeux sociaux-économiques "
+          Au-delà des bénéfices évident du sport sur la santé telle que la prévention des troubles du sommeil, cardio-vasculaires ou musculo-squelettiques. Le sport en entreprise offre de nombreux avantages et enjeux sociaux-économiques."
           price="Sur devis"
           features={[
             'Créer du lien social entre les collaborateurs',

@@ -15,9 +15,9 @@ const FAQElements: FAQElement[] = [
     id: 1,
     title: 'Quels sont les avantages de faire appel à un coach sportif à domicile ?',
     response: <>
-      <b>Personnalisation de l&apos;entraînement</b> : Péparation des programmes d&apos;entraînement personnalisés en fonction des objectifs, du niveau de forme physique, des besoins spécifiques et des éventuelles limitations de chaque individu.
+      <b>Personnalisation de l&apos;entraînement</b> : Préparation des programmes d&apos;entraînement personnalisés en fonction des objectifs, du niveau de forme physique, des besoins spécifiques et des éventuelles limitations de chaque individu.
       <br/><br/>
-      <b>Flexibilité horaire</b> : Vous avez la possibilité de planifier les séances d&apos;entraînement selon votre emploi du temps et vos disponibilités, ce qui offre une grande flexibilité pour concilier vie professionnelle, familiale et sportive.
+      <b>Flexibilité horaire</b> : Vous avez la possibilité de planifier les séances d&apos;entraînement, selon votre emploi du temps et vos disponibilités, ce qui offre une grande flexibilité pour concilier vie professionnelle, familiale et sportive.
       <br/><br/>
       <b>Motivation et encouragement</b> : Le coach sportif joue un rôle crucial en matière de motivation en vous encourageant, en vous poussant à donner le meilleur de vous-même et en vous aidant à maintenir la discipline nécessaire pour atteindre vos objectifs.
     </>,
@@ -26,7 +26,7 @@ const FAQElements: FAQElement[] = [
     id: 2,
     title: 'Quels équipements dois-je avoir à ma disposition pour les séances d\'entraînement à domicile ?',
     response: <>
-      Pour les séances de coaching vous n&apos;avez pas besoin de matériel en particulier je me déplace directement avec tous le métériel nécessaire.
+      Pour les séances de coaching vous n&apos;avez pas besoin de matériel en particulier je me déplace directement avec tout le matériel nécessaire.
     </>
   },
   {
@@ -45,16 +45,16 @@ const FAQElements: FAQElement[] = [
   },
   {
     id: 5,
-    title: 'Est t-il possible de s\'entrainer en groupe ?',
+    title: 'Est-t-il possible de s\'entrainer en groupe ?',
     response: <>
-      Pour celles et ceux qui préfèrent rester enpetit comité, je propose aussi une formule de coaching en groupe à domicile, en extérieur. Entraînez-vous avec vos amis(es) pour plus de fun et de plaisir !
+      Pour celles et ceux qui préfèrent rester en petit comité, je propose aussi une formule de coaching en groupe à domicile, en extérieur. Entraînez-vous avec vos amis(es) pour plus de fun et de plaisir !
     </>
   },
   {
     id: 6,
     title: 'Que faire en cas d\'annulation ou de report de séance ?',
     response: <>
-      Si vous avez besoin d&apos;annuler ou de reporter une séance, il est préférablede me tenir informer dès que possible.
+      Si vous avez besoin d&apos;annuler ou de reporter une séance, il est préférable de me tenir informé dès que possible.
       <br/>
       Je recommande de le faire au moins 24 heures à l&apos;avance pour me permettre de réorganiser mon planning.
     </>

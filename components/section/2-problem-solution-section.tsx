@@ -10,17 +10,6 @@ const ProblemSolutionSection = () => {
   return <Container>
     <div className="flex flex-1 gap-12 items-start justify-center flex-col lg:flex-row">
       <div className="flex-1 flex justify-center lg:sticky lg:top-24">
-        {/* <video className="max-h-[440px] w-auto rounded-lg" controls>
-          <source src={`/${BASE_PATH}problem-solution.webm`} type="video/webm" />
-          <track
-            default
-            src={`/${BASE_PATH}problem-solution.vtt`}
-            kind="captions"
-            srcLang="en"
-            label="English"
-          />
-          Your browser does not support the video tag.
-        </video> */}
         <Image src={KillianPicture} alt='Killian devant son fit truck' className='rounded-lg shadow-md object-cover' />
       </div>
       <div className="flex-1 flex flex-col gap-6">
