@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./button";
 import { Menu, XIcon } from "lucide-react";
-import Logo from "@/assets/images/logo-white.png";
+import Logo from "@/assets/images/logo-fit-truck-cropped.png";
 import useIsMobile from "@/hooks/useIsMobile";
 import CTAButton from "./cta-button";
 
@@ -24,14 +24,14 @@ const MobileNavItem = ({
 }: MobileNavItemProps) => {
     return (
         <div
-            className="cursor-pointer text-2xl relative group text-[#000229]"
+            className="cursor-pointer text-2xl relative group text-primary-foreground"
             onClick={onClick}
             data-redirect={redirectUrl}
             {...props}
         >
             {children}
-            <span className="absolute -bottom-2 left-1/2 w-0 h-1 bg-[#000229] group-hover:w-1/2 group-hover:transition-all"></span>
-            <span className="absolute -bottom-2 right-1/2 w-0 h-1 bg-[#000229] group-hover:w-1/2 group-hover:transition-all"></span>
+            <span className="absolute -bottom-2 left-1/2 w-0 h-1 bg-primary-foreground group-hover:w-1/2 group-hover:transition-all"></span>
+            <span className="absolute -bottom-2 right-1/2 w-0 h-1 bg-primary-foreground group-hover:w-1/2 group-hover:transition-all"></span>
         </div>
     );
 }
@@ -71,16 +71,16 @@ const MobileNav = () => {
           <Image src={Logo} alt="Killian coaching logo" height={50} />
         </Link>
       </div>
-      <Button variant="link" size="icon" className="text-[#E7F3FF]" onClick={onHandleClick}>
+      <Button variant="link" size="icon" className="text-primary-foreground" onClick={onHandleClick}>
           {isOpen ? <XIcon size={24} /> : <Menu size={24} />}
         </Button>
     </nav>
     {isOpen && (
-      <div className="fixed w-screen h-[calc(100%-5rem)] bg-white z-20 mt-20 flex flex-col justify-center items-center">
-        <div className="flex flex-col gap-12 items-center text-black">
+      <div className="fixed w-screen h-[calc(100%-5rem)] bg-primary z-20 mt-20 flex flex-col justify-center items-center">
+        <div className="flex flex-col gap-12 items-center">
           <MobileNavItem onClick={onHandleRedirect} redirectUrl="/">Accueil</MobileNavItem>
           <MobileNavItem onClick={onHandleRedirect} redirectUrl="/coaching">Coaching</MobileNavItem>
-          <CTAButton>Réserver une séance d&apos;essai</CTAButton>
+          <CTAButton contrast>Réserver une séance d&apos;essai</CTAButton>
         </div>
       </div>
     )}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "@/assets/images/logo-white.png";
+import Logo from "@/assets/images/logo-fit-truck-cropped.png";
 import { Instagram } from "lucide-react";
 import Link from "next/link";
 import { MAIL_TO } from "@/hooks/useMailTo";
@@ -15,7 +15,7 @@ const Nav = () => {
         className={`fixed hidden md:flex w-full bg-[#000229]/40 backdrop-blur p-6 items-center gap-12 z-20 top-0 start-0 h-20`}
       >
         <div className="flex-1 flex items-center gap-12">
-          <Link href="/" className="ml-12">
+          <Link href="/" className="lg:ml-12">
             <Image src={Logo} alt="Killian coaching logo" height={50} />
           </Link>
           <ul className={"hidden flex-1 justify-end gap-12 md:flex text-[#E7F3FF]"}>
