@@ -33,7 +33,7 @@ const BeforeAfterSection = () => {
                 <BeforeAfterCard
                     title='Mathieu - 23 ans'
                     picture={BeforeAfterMathieu}
-                    badges={['8 mois', 'Poid: -14kg', 'Taille: -9cm', 'Hanche: -10cm']}
+                    badges={['8 mois', 'Poids: -14kg', 'Taille: -9cm', 'Hanche: -10cm']}
                     content='Mathieu a choisi un coaching à distance qui correspond mieux à son mode de vie.
                     Nous avons construit un programme complet d&apos;exercices et alimentaire ensemble.
                     En moins d&apos;un an il a atteint son objectif de perte de poids
@@ -44,7 +44,7 @@ const BeforeAfterSection = () => {
                 <BeforeAfterCard
                     title='Sébastien - 37 ans'
                     picture={BeforeAfterSebastien}
-                    badges={['6 mois', 'Poid: -16kg', 'Taille: -16cm', 'Hanche: -14cm']}
+                    badges={['6 mois', 'Poids: -16kg', 'Taille: -16cm', 'Hanche: -14cm']}
                     content='Sébastien m&apos;a contacté suite à une opération du dos afin de pouvoir reprendre le travail dans de bonnes conditions.
                     Nous avons donc adapté le programme d&apos;entrainement à sa pathologie ainsi que la nutrition.
                     Il a perdu 16kg en 6 mois.'
@@ -54,7 +54,7 @@ const BeforeAfterSection = () => {
                 <BeforeAfterCard
                     title='Kylian - 18 ans'
                     picture={BeforeAfterKylian}
-                    badges={['3 mois', 'Poid: -11kg', 'Taille: -12cm', 'Poitrine: -6cm']}
+                    badges={['3 mois', 'Poids: -11kg', 'Taille: -12cm', 'Poitrine: -6cm']}
                     content='Kylian m&apos;a contacté dans l&apos;optique d&apos;une perte de poids afin de se sentir mieux dans son corps.
                     Nous avons donc adapté l&apos;entraînement et la nutrition à son objectif objectif de perte de poids.'
                 />
