@@ -35,7 +35,7 @@ const PricingCard = ({ anchor, title, description, price, features, frequency, p
             ))}
         </ul>
       </div>
-      <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
+      <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:shrink-0">
         <div className="h-full rounded-2xl bg-primary py-10 text-center text-primary-foreground lg:flex lg:flex-col lg:justify-center lg:py-16">
           <div className="mx-auto max-w-xs px-8">
             {priceTitle &&
