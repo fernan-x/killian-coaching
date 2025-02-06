@@ -2,8 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Demo
 
-* [https://fernan-x.github.io/killian-coaching/](Preproduction)
-* [https://www.fittruck-nantes.com/](Production)
+* [Preproduction](https://fernan-x.github.io/killian-coaching/)
+* [Production](https://www.fittruck-nantes.com/)
 
 ## Getting Started
 
