@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Fit truck - Nantes - Killian Coaching",
   description:
-    "En tant que coach sportif certifié à Nantes, je propose des séances sur mesure en fonction de vos objectifs. Je me déplace avec mon Fit truck, équipé pour tout type d'entraînement.",
+    "En tant que coach sportif à domicile certifié à Nantes, je propose des séances sur mesure en fonction de vos objectifs. Je me déplace avec mon Fit truck, équipé pour tout type d'entraînement.",
 };
 
 export default function RootLayout({
