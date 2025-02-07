@@ -2,7 +2,7 @@ import PricingCard from "@/components/common/pricing-card/pricing-card";
 import Link from "next/link";
 import React from "react";
 
-export const LinkToBlock: React.FC<React.PropsWithChildren<{ href: string }>> = ({ href, children }) => {
+const LinkToBlock: React.FC<React.PropsWithChildren<{ href: string }>> = ({ href, children }) => {
   return (
     <Link href={href} className="bg-primary hover:bg-primary-hover text-primary-foreground px-4 py-2 rounded-full">
       {children}
