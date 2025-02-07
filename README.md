@@ -19,7 +19,7 @@
   <h3 align="center">Fit truck / Killian Coaching</h3>
 
   <p align="center">
-    The website for my coach Killian with it's Fit truck concept.
+    SEO-optimized website for Killian Coaching and its unique Fit Truck concept.
     <br />
     <a href="https://github.com/fernan-x/killian-coaching"><strong>Explore the docs »</strong></a>
     <br />
