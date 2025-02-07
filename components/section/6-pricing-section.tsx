@@ -27,11 +27,11 @@ const PricingSection = () => {
             price='30€'
             frequency='/ séance'
         />
-        <HomePagePricingCard
+        {/* <HomePagePricingCard
             title='Coaching en entreprise'
             price='Sur&nbsp;devis'
             fixedPrice
-        />
+        /> */}
     </div>
   </Container>;
 };
