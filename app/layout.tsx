@@ -8,9 +8,9 @@ import CookieConsent from "@/components/common/cookie-consent";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Killian Coaching - Nantes",
+  title: "Fit truck - Nantes - Killian Coaching",
   description:
-    "Killian Coaching. Coach à domicile sur Nantes se déplaçant avec son Fit truck.",
+    "En tant que coach sportif certifié à Nantes, je propose des séances sur mesure en fonction de vos objectifs. Je me déplace avec mon Fit truck, équipé pour tout type d'entraînement.",
 };
 
 export default function RootLayout({

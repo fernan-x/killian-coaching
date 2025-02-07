@@ -13,20 +13,25 @@ const PricingSection = () => {
             price='Offerte'
         />
         <HomePagePricingCard
-            title='1 séance hebdomadaire'
+            title='Formule 10 séances'
             price='36€'
             frequency='/ séance'
         />
         <HomePagePricingCard
-            title='2 séances hebdomadaires'
-            price='30€'
+            title='Formule 20 séances'
+            price='33€'
             frequency='/ séance'
         />
         <HomePagePricingCard
+            title='Formule 30 séances'
+            price='30€'
+            frequency='/ séance'
+        />
+        {/* <HomePagePricingCard
             title='Coaching en entreprise'
             price='Sur&nbsp;devis'
             fixedPrice
-        />
+        /> */}
     </div>
   </Container>;
 };

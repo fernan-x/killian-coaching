@@ -12,7 +12,7 @@ const Nav = () => {
     <React.Fragment>
       <MobileNav />
       <nav
-        className={`fixed hidden md:flex w-full bg-[#000229]/40 backdrop-blur p-6 items-center gap-12 z-20 top-0 start-0 h-20`}
+        className={`fixed hidden md:flex w-full bg-[#000229]/40 backdrop-blur-sm p-6 items-center gap-12 z-20 top-0 start-0 h-20`}
       >
         <div className="flex-1 flex items-center gap-12">
           <Link href="/" className="lg:ml-12">

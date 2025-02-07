@@ -1,5 +1,14 @@
 import PricingCard from "@/components/common/pricing-card/pricing-card";
 import Link from "next/link";
+import React from "react";
+
+export const LinkToBlock: React.FC<React.PropsWithChildren<{ href: string }>> = ({ href, children }) => {
+  return (
+    <Link href={href} className="bg-primary hover:bg-primary-hover text-primary-foreground px-4 py-2 rounded-full">
+      {children}
+    </Link>
+  );
+};
 
 export default function Coaching() {
   return (
@@ -7,29 +16,36 @@ export default function Coaching() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl text-center lg:text-left">
           <h2 className="uppercase text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Atteignons vos objectifs ensemble</h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">Que ce soit à domicile ou à distance, vous avez tous les outils pour atteindre vos objectifs.</p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">Profitez d&apos;un entraînement personnalisé et de qualité, avec un matériel professionnel, directement chez vous. Que vous soyez débutant ou sportif confirmé, je m&apos;adapte à vos objectifs et à votre rythme.</p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 items-center mt-16">
-          <Link href='#domicile' className="bg-primary hover:bg-primary-hover text-primary-foreground px-4 py-2 rounded-full">
-            À domicile
-          </Link>
-          <Link href='#distance' className="bg-primary hover:bg-primary-hover text-primary-foreground px-4 py-2 rounded-full">
+          <LinkToBlock href='#10-seances'>
+            Formule 10 séances
+          </LinkToBlock>
+          <LinkToBlock href='#20-seances'>
+            Formule 20 séances
+          </LinkToBlock>
+          <LinkToBlock href='#30-seances'>
+            Formule 30 séances
+          </LinkToBlock>
+          {/* <LinkToBlock href='#distance'>
             À distance
-          </Link>
-          <Link href='#entreprise' className="bg-primary hover:bg-primary-hover text-primary-foreground px-4 py-2 rounded-full">
+          </LinkToBlock> */}
+          <LinkToBlock href='#entreprise'>
             En entreprise
-          </Link>
+          </LinkToBlock>
         </div>
 
         <PricingCard
-          anchor="domicile"
-          title="Coaching à domicile"
+          anchor="10-seances"
+          title="Formule 10 séances"
           description="Profitez d'un accompagnement personnalisé, adapté à votre emploi du temps.
           Atteignez vos objectifs physiques avec l'aide d'un coach diplômé d'état directement à domicile."
           priceTitle="Après déduction d&apos;impôt"
-          price="30€"
+          price="36€"
           features={[
+            'Valable 3 mois',
             'Séance adaptée à votre objectif',
             'Suivi hebdomadaire de votre progression',
             'Conseils sur votre alimentation',
@@ -38,6 +54,38 @@ export default function Coaching() {
           subTitle=""
         />
         <PricingCard
+          anchor="20-seances"
+          title="Formule 20 séances"
+          description="Profitez d'un accompagnement personnalisé, adapté à votre emploi du temps.
+          Atteignez vos objectifs physiques avec l'aide d'un coach diplômé d'état directement à domicile."
+          priceTitle="Après déduction d&apos;impôt"
+          price="33€"
+          features={[
+            'Valable 6 mois',
+            'Séance adaptée à votre objectif',
+            'Suivi hebdomadaire de votre progression',
+            'Conseils sur votre alimentation',
+          ]}
+          frequency='/ séance'
+          subTitle=""
+        />
+        <PricingCard
+          anchor="30-seances"
+          title="Formule 30 séances"
+          description="Profitez d'un accompagnement personnalisé, adapté à votre emploi du temps.
+          Atteignez vos objectifs physiques avec l'aide d'un coach diplômé d'état directement à domicile."
+          priceTitle="Après déduction d&apos;impôt"
+          price="30€"
+          features={[
+            'Valable 12 mois',
+            'Séance adaptée à votre objectif',
+            'Suivi hebdomadaire de votre progression',
+            'Conseils sur votre alimentation',
+          ]}
+          frequency='/ séance'
+          subTitle=""
+        />
+        {/* <PricingCard
           anchor="distance"
           title="Coaching à distance"
           description="Profitez d'un programme d'entrainement personnalisé pour atteindre vos objectifs."
@@ -51,7 +99,7 @@ export default function Coaching() {
           ]}
           frequency='/ mois'
           subTitle="Prix dégressif selon engagement"
-        />
+        /> */}
          <PricingCard
           anchor="entreprise"
           title="Coaching en entreprise"
