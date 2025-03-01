@@ -1,4 +1,5 @@
-import HeroPicture from "@/assets/images/coach-plank-outdoor.jpeg";
+// import HeroPicture from "@/assets/images/coach-plank-outdoor.jpeg";
+import HeroPicture from "@/assets/images/hero-section-picture.jpeg";
 import Image from 'next/image'
 import { H1, Paragraph } from "../ui/text";
 import MailToButton from "../ui/mail-to-button";
@@ -17,7 +18,7 @@ const HeroSection = () => {
           fill
           priority
           alt="Killian motivating a customer"
-          className="object-cover md:translate-x-28"
+          className="object-cover translate-x-12 md:translate-x-28"
         />
       </div>
       <div className="absolute h-full w-full bg-linear-to-r from-black md:from-10% md:to-50%"/>
