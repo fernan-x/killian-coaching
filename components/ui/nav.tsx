@@ -20,6 +20,7 @@ const Nav = () => {
           </Link>
           <ul className={"hidden flex-1 justify-end gap-12 md:flex text-[#E7F3FF]"}>
             <NavLink href="/coaching">Coaching</NavLink>
+            <NavLink href="/service-a-la-personne">Service à la personne</NavLink>
             {/* <NavLink href="/fit-truck">Fit Truck</NavLink> */}
             <NavLink href={MAIL_TO}>Contact</NavLink>
           </ul>

@@ -13,7 +13,7 @@ const CTAButton = ({children, className, contrast, ...props}: CTAButton) => {
     return <button
         className={cn(
             className,
-            'rounded-lg text-xl py-3 px-6 hover:opacity-90',
+            'rounded-lg text-xl py-3 px-6 hover:opacity-90 cursor-pointer',
             contrast ? 'bg-secondary text-secondary-foreground' : 'bg-cta text-primary-foreground',
         )}
         onClick={onMailTo}

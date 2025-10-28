@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '../ui/container';
 import { H2 } from '../ui/text';
 import HomePagePricingCard from '../common/homepage-pricing-card';
+import Link from '../ui/link';
 
 const PricingSection = () => {
   return <Container bg='dark'>
@@ -13,26 +14,18 @@ const PricingSection = () => {
             price='Offerte'
         />
         <HomePagePricingCard
-            title='Formule 10 séances'
-            price='36€'
-            frequency='/ séance'
-        />
-        <HomePagePricingCard
-            title='Formule 20 séances'
-            price='33€'
-            frequency='/ séance'
-        />
-        <HomePagePricingCard
-            title='Formule 30 séances'
+            title='Coaching à domicile'
             price='30€'
+            startingAtLabel='À partir de*'
             frequency='/ séance'
         />
-        {/* <HomePagePricingCard
+        <HomePagePricingCard
             title='Coaching en entreprise'
             price='Sur&nbsp;devis'
             fixedPrice
-        /> */}
+        />
     </div>
+    <p className='text-white italic text-sm'>*Après déduction de 50% du <Link to="/service-a-la-personne" variant="secondary" target="_self">crédit d&apos;impôt avance immédiate</Link>.</p>
   </Container>;
 };
 

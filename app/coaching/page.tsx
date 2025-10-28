@@ -20,14 +20,8 @@ export default function Coaching() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 items-center mt-16">
-          <LinkToBlock href='#10-seances'>
-            Formule 10 séances
-          </LinkToBlock>
-          <LinkToBlock href='#20-seances'>
-            Formule 20 séances
-          </LinkToBlock>
-          <LinkToBlock href='#30-seances'>
-            Formule 30 séances
+          <LinkToBlock href='#domicile'>
+            À domicile
           </LinkToBlock>
           {/* <LinkToBlock href='#distance'>
             À distance
@@ -38,53 +32,22 @@ export default function Coaching() {
         </div>
 
         <PricingCard
-          anchor="10-seances"
-          title="Formule 10 séances"
+          anchor="domicile"
+          title="Coaching à domicile"
           description="Profitez d'un accompagnement personnalisé, adapté à votre emploi du temps.
           Atteignez vos objectifs physiques avec l'aide d'un coach diplômé d'état directement à domicile."
-          priceTitle="Après déduction d&apos;impôt"
-          price="36€"
-          features={[
-            'Valable 3 mois',
-            'Séance adaptée à votre objectif',
-            'Suivi hebdomadaire de votre progression',
-            'Conseils sur votre alimentation',
-          ]}
-          frequency='/ séance'
-          subTitle=""
-        />
-        <PricingCard
-          anchor="20-seances"
-          title="Formule 20 séances"
-          description="Profitez d'un accompagnement personnalisé, adapté à votre emploi du temps.
-          Atteignez vos objectifs physiques avec l'aide d'un coach diplômé d'état directement à domicile."
-          priceTitle="Après déduction d&apos;impôt"
-          price="33€"
-          features={[
-            'Valable 6 mois',
-            'Séance adaptée à votre objectif',
-            'Suivi hebdomadaire de votre progression',
-            'Conseils sur votre alimentation',
-          ]}
-          frequency='/ séance'
-          subTitle=""
-        />
-        <PricingCard
-          anchor="30-seances"
-          title="Formule 30 séances"
-          description="Profitez d'un accompagnement personnalisé, adapté à votre emploi du temps.
-          Atteignez vos objectifs physiques avec l'aide d'un coach diplômé d'état directement à domicile."
-          priceTitle="Après déduction d&apos;impôt"
+          priceTitle="À partir de"
           price="30€"
           features={[
-            'Valable 12 mois',
             'Séance adaptée à votre objectif',
             'Suivi hebdomadaire de votre progression',
             'Conseils sur votre alimentation',
           ]}
           frequency='/ séance'
           subTitle=""
+          buttonTitle="Essayer une séance gratuitement"
         />
+
         {/* <PricingCard
           anchor="distance"
           title="Coaching à distance"

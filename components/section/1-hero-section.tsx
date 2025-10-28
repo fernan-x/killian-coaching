@@ -29,7 +29,7 @@ const HeroSection = () => {
             duration={2500}
             words={['certifié et diplômé d\'État', 'selon vos horaires et à votre rythme', 'affilié service à la personne']}/>
         </Paragraph>
-        <CTAButton className='w-fit'>Réserver une séance d&apos;essai</CTAButton>
+        <CTAButton className='w-fit'>Essayer une séance gratuitement</CTAButton>
       </div>
     </div>
   );
