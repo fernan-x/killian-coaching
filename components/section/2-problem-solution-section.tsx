@@ -7,7 +7,7 @@ const START_COACHING_YEAR = 2021;
 const yearExperience = new Date().getFullYear() - START_COACHING_YEAR;
 
 const ProblemSolutionSection = () => {
-  return <Container>
+  return <Container bg="light">
     <div className="flex flex-1 gap-12 items-start justify-center flex-col lg:flex-row">
       <div className="flex-1 flex justify-center lg:sticky lg:top-24">
         <Image src={KillianPicture} alt='Killian devant son fit truck' className='rounded-lg shadow-md object-cover' />

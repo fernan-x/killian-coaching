@@ -16,7 +16,7 @@ const Container = ({ children, fitContent = false, bg = 'white', noPadding = fal
         "w-screen flex flex-col items-center gap-9",
         props.className,
         fitContent ? "h-fit" : "min-h-[300px]",
-        bg === 'white' ? "bg-white" : (bg === 'dark' ? "bg-primary" : "bg-[#F3F7FF]"),
+        bg === 'white' ? "bg-white" : (bg === 'dark' ? "bg-primary" : "bg-primary/5"),
         noPadding ? "" : "py-12 px-6 md:px-28",
       )}
     >
