@@ -46,7 +46,7 @@ const HeroSectionV2 = () => {
             </span>
           </div>
           <p className="italic text-muted-foreground">
-            "J’ai retrouvé de la mobilité et surtout confiance en moi."
+            &quot;J&apos;ai retrouvé de la mobilité et surtout confiance en moi.&quot;
           </p>
         </div>
 
