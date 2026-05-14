@@ -1,73 +1,53 @@
-# Welcome to your Lovable project
+# Killian Coaching
 
-## Project info
+Personal coaching website built with Vite, React, TypeScript, shadcn-ui and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Getting started
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+**Requirements:** Node.js 20+ and npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the dev server (http://localhost:8080)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| Command | Mode | Base path | Use case |
+|---|---|---|---|
+| `npm run build` | production | `/killian-coaching/` | GitHub Pages deployment |
+| `npm run build:dev` | development | `/` | Local production preview |
+| `npm run preview` | — | — | Preview the last build locally |
 
-**Use GitHub Codespaces**
+> **Why two build modes?**
+> In production mode, Vite prefixes all asset paths with `/killian-coaching/` to match the GitHub Pages sub-path (`fernan-x.github.io/killian-coaching/`). In development mode, the base is `/` so you can preview the build at `localhost:4173` without a sub-path.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deployment
 
-## What technologies are used for this project?
+Pushes to `main` automatically trigger the GitHub Actions workflow (`.github/workflows/nextjs.yml`) which builds and deploys to GitHub Pages.
 
-This project is built with:
+**Live URL:** https://fernan-x.github.io/killian-coaching/
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Project structure
 
-## How can I deploy this project?
+```
+src/
+├── assets/         # Static images
+├── components/     # Reusable UI components (shadcn-ui + custom)
+├── hooks/          # React hooks
+├── lib/            # Utilities
+└── pages/          # Route-level page components
+legacy/             # Old Next.js site — do not use
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Technologies
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- [Vite](https://vitejs.dev/)
+- [React 18](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn-ui](https://ui.shadcn.com/)
+- [React Router v6](https://reactrouter.com/)
