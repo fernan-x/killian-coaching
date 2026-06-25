@@ -1,5 +1,7 @@
 import { Home, Target, Users, Truck, CheckCircle, Building2, Clock, TrendingUp, Heart, Briefcase, Zap, Video, Wifi, Calendar, MapPin } from "lucide-react";
-import equipmentImage from "@/assets/equipment.jpg";
+import domicileImage from "@/assets/coaching-domicile.jpg";
+import visioImage from "@/assets/coaching-visio.jpg";
+import entrepriseImage from "@/assets/coaching-entreprise.jpg";
 import { useState } from "react";
 
 const CoachingSection = () => {
@@ -145,7 +147,11 @@ const CoachingSection = () => {
           {/* Image */}
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-custom-lg">
-              <img src={equipmentImage} alt="Équipement sportif pour coaching" className="w-full h-auto" />
+              <img
+                src={activeTab === 'visio' ? visioImage : activeTab === 'entreprise' ? entrepriseImage : domicileImage}
+                alt={activeTab === 'visio' ? "Coaching sportif en visio à distance" : activeTab === 'entreprise' ? "Coaching sportif en entreprise" : "Coaching sportif à domicile"}
+                className="w-full h-auto"
+              />
             </div>
           </div>
 

@@ -4,9 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useReCaptcha } from "@/hooks/useReCaptcha";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const { execute: executeReCaptcha } = useReCaptcha();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -27,15 +29,43 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const recaptchaToken = await executeReCaptcha("contact_form");
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "Message envoyé !",
-      description: "Je vous recontacte très rapidement pour planifier votre séance découverte.",
-    });
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          subject: `Nouvelle demande de séance — ${formData.name}`,
+          from_name: "Fit Truck - Formulaire de contact",
+          botcheck: false,
+          "g-recaptcha-response": recaptchaToken,
+          ...formData,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+        toast({
+          title: "Message envoyé !",
+          description: "Je vous recontacte très rapidement pour planifier votre séance découverte.",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        throw new Error(data.message ?? "Erreur inconnue");
+      }
+    } catch {
+      toast({
+        title: "Erreur d'envoi",
+        description: "Une erreur est survenue. Contactez-moi directement par email ou téléphone.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -129,6 +159,15 @@ const ContactSection = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot — hidden from real users, bots fill it and get blocked */}
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    style={{ display: "none" }}
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    readOnly
+                  />
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -211,7 +250,16 @@ const ContactSection = () => {
                   </Button>
 
                   <p className="text-xs text-muted-foreground text-center">
-                    En soumettant ce formulaire, vous acceptez d'être recontacté pour votre séance découverte.
+                    En soumettant ce formulaire, vous acceptez d'être recontacté pour votre séance découverte.{" "}
+                    Ce site est protégé par reCAPTCHA —{" "}
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">
+                      Politique de confidentialité
+                    </a>{" "}
+                    et{" "}
+                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline">
+                      Conditions d'utilisation
+                    </a>{" "}
+                    de Google.
                   </p>
                 </form>
               )}

@@ -60,7 +60,7 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+33600000000" className="flex items-center gap-2 transition-colors text-muted-foreground hover:text-primary">
+            <a href="tel:+33750403499" className="flex items-center gap-2 transition-colors text-muted-foreground hover:text-primary">
               <Phone className="w-4 h-4" />
               <span className="text-sm font-medium">07 50 40 34 99</span>
             </a>
@@ -76,15 +76,15 @@ const Header = () => {
         </nav>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && <div className="lg:hidden absolute top-full left-0 right-0 bg-card/98 backdrop-blur-lg shadow-custom-lg border-t border-border animate-fade-in">
+        {isMobileMenuOpen && <div className="lg:hidden absolute top-full left-0 right-0 bg-card shadow-custom-lg border-t border-border animate-fade-in">
             <div className="container-custom px-4 py-6 flex flex-col gap-2">
               {navLinks.map(link => <Button key={link.href} variant="ghost" className="justify-start text-base" onClick={() => scrollToSection(link.href)}>
                   {link.label}
                 </Button>)}
               <hr className="my-2 border-border" />
-              <a href="tel:+33600000000" className="flex items-center gap-2 text-muted-foreground py-2">
+              <a href="tel:+33750403499" className="flex items-center gap-2 text-muted-foreground py-2">
                 <Phone className="w-4 h-4" />
-                <span className="font-medium">06 00 00 00 00</span>
+                <span className="font-medium">07 50 40 34 99</span>
               </a>
               <Button variant="hero" size="lg" className="mt-2" onClick={() => scrollToSection("#contact")}>
                 Séance découverte offerte
