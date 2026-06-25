@@ -1,15 +1,13 @@
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
+import { PHONE_DISPLAY, PHONE_HREF, EMAIL_DISPLAY, EMAIL_HREF } from "@/lib/constants";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  };
-  return <footer className="bg-foreground text-card pt-16 pb-8">
+  const scrollTo = useScrollToSection();
+
+  return (
+    <footer className="bg-foreground text-card pt-16 pb-8">
       <div className="container-custom px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -26,11 +24,23 @@ const Footer = () => {
               Saint-Sébastien-sur-Loire · Vertou · Rezé · Carquefou · La Chapelle-sur-Erdre · etc.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 rounded-lg bg-card/10 flex items-center justify-center hover:bg-accent transition-colors" aria-label="Instagram">
-                <Instagram className="w-5 h-5" />
+              <a
+                href="#"
+                className="w-10 h-10 rounded-lg bg-card/10 flex items-center justify-center hover:bg-accent transition-colors"
+                aria-label="Instagram"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Instagram className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-card/10 flex items-center justify-center hover:bg-accent transition-colors" aria-label="Facebook">
-                <Facebook className="w-5 h-5" />
+              <a
+                href="#"
+                className="w-10 h-10 rounded-lg bg-card/10 flex items-center justify-center hover:bg-accent transition-colors"
+                aria-label="Facebook"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Facebook className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -39,32 +49,23 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-card mb-4">Navigation</h3>
             <ul className="space-y-3">
-              {[{
-              label: "Accueil",
-              href: "#"
-            }, {
-              label: "Coaching",
-              href: "#coaching"
-            }, {
-              label: "Avantages fiscaux",
-              href: "#avantages"
-            }, {
-              label: "Tarifs",
-              href: "#tarifs"
-            }, {
-              label: "À propos",
-              href: "#apropos"
-            }, {
-              label: "Contact",
-              href: "#contact"
-            }].map(link => <li key={link.label}>
-                  <button onClick={() => link.href === "#" ? window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-              }) : scrollToSection(link.href)} className="text-card/70 hover:text-accent transition-colors text-left">
+              {[
+                { label: "Accueil", href: "#" },
+                { label: "Coaching", href: "#coaching" },
+                { label: "Avantages fiscaux", href: "#avantages" },
+                { label: "Tarifs", href: "#tarifs" },
+                { label: "À propos", href: "#apropos" },
+                { label: "Contact", href: "#contact" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <button
+                    onClick={() => scrollTo(link.href)}
+                    className="text-card/70 hover:text-accent transition-colors text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-card/50 rounded"
+                  >
                     {link.label}
                   </button>
-                </li>)}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -73,19 +74,25 @@ const Footer = () => {
             <h3 className="font-semibold text-card mb-4">Contact</h3>
             <ul className="space-y-4">
               <li>
-                <a href="tel:+33600000000" className="flex items-center gap-3 text-card/70 hover:text-accent transition-colors">
-                  <Phone className="w-4 h-4 flex-shrink-0" />
-                  <span>​07 50 40 34 99        </span>
+                <a
+                  href={PHONE_HREF}
+                  className="flex items-center gap-3 text-card/70 hover:text-accent transition-colors"
+                >
+                  <Phone className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                  <span>{PHONE_DISPLAY}</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:contact@fittruck.fr" className="flex items-center gap-3 text-card/70 hover:text-accent transition-colors">
-                  <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span>​killiancoaching.pro@gmail.com</span>
+                <a
+                  href={EMAIL_HREF}
+                  className="flex items-center gap-3 text-card/70 hover:text-accent transition-colors"
+                >
+                  <Mail className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                  <span>{EMAIL_DISPLAY}</span>
                 </a>
               </li>
               <li className="flex items-center gap-3 text-card/70">
-                <MapPin className="w-4 h-4 flex-shrink-0" />
+                <MapPin className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                 <span>Nantes et alentours</span>
               </li>
             </ul>
@@ -109,6 +116,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

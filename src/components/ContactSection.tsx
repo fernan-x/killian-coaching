@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useReCaptcha } from "@/hooks/useReCaptcha";
 
@@ -181,6 +181,8 @@ const ContactSection = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        minLength={2}
+                        maxLength={100}
                         className="h-12"
                       />
                     </div>
@@ -196,6 +198,8 @@ const ContactSection = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         required
+                        pattern="^(\+33|0)[1-9](\s?\d{2}){4}$"
+                        title="Numéro de téléphone français (ex: 06 00 00 00 00)"
                         className="h-12"
                       />
                     </div>
@@ -240,7 +244,10 @@ const ContactSection = () => {
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      "Envoi en cours..."
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
+                        Envoi en cours...
+                      </>
                     ) : (
                       <>
                         Réserver ma séance gratuite

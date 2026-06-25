@@ -31,6 +31,7 @@ const AboutSection = () => {
                 src={coachImage}
                 alt="Coach sportif diplômé - Fit Truck Nantes"
                 className="w-full h-auto"
+                loading="lazy"
               />
             </div>
             {/* Badge */}
