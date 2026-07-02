@@ -7,10 +7,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.grecaptcha-badge {
-  visibility: hidden;
-}
-
 @layer base {
   :root {
     /* Fit Truck Blue - Primary brand color */

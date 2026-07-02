@@ -25,7 +25,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/killian_coaching/"
                 className="w-10 h-10 rounded-lg bg-card/10 flex items-center justify-center hover:bg-accent transition-colors"
                 aria-label="Instagram"
                 rel="noopener noreferrer"
@@ -34,7 +34,7 @@ const Footer = () => {
                 <Instagram className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/p/Killian-Coaching-100069719199938/"
                 className="w-10 h-10 rounded-lg bg-card/10 flex items-center justify-center hover:bg-accent transition-colors"
                 aria-label="Facebook"
                 rel="noopener noreferrer"

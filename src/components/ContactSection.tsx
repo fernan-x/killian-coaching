@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Send, CheckCircle, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { useReCaptcha } from "@/hooks/useReCaptcha";
+import { useHCaptcha } from "@/hooks/useHCaptcha";
 
 const ContactSection = () => {
   const { toast } = useToast();
-  const { execute: executeReCaptcha } = useReCaptcha();
+  const hcaptchaRef = useRef<HTMLDivElement>(null);
+  const { getToken, reset: resetHCaptcha } = useHCaptcha(hcaptchaRef);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -30,8 +31,6 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const recaptchaToken = await executeReCaptcha("contact_form");
-
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -40,7 +39,7 @@ const ContactSection = () => {
           subject: `Nouvelle demande de séance — ${formData.name}`,
           from_name: "Fit Truck - Formulaire de contact",
           botcheck: false,
-          "g-recaptcha-response": recaptchaToken,
+          "h-captcha-response": getToken(),
           ...formData,
         }),
       });
@@ -54,6 +53,7 @@ const ContactSection = () => {
           description: "Je vous recontacte très rapidement pour planifier votre séance découverte.",
         });
         setFormData({ name: "", email: "", phone: "", message: "" });
+        resetHCaptcha();
       } else {
         throw new Error(data.message ?? "Erreur inconnue");
       }
@@ -63,6 +63,7 @@ const ContactSection = () => {
         description: "Une erreur est survenue. Contactez-moi directement par email ou téléphone.",
         variant: "destructive",
       });
+      resetHCaptcha();
     } finally {
       setIsSubmitting(false);
     }
@@ -236,6 +237,8 @@ const ContactSection = () => {
                     />
                   </div>
 
+                  <div ref={hcaptchaRef} />
+
                   <Button
                     type="submit"
                     variant="hero"
@@ -258,15 +261,14 @@ const ContactSection = () => {
 
                   <p className="text-xs text-muted-foreground text-center">
                     En soumettant ce formulaire, vous acceptez d'être recontacté pour votre séance découverte.{" "}
-                    Ce site est protégé par reCAPTCHA —{" "}
-                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">
+                    Ce site est protégé par hCaptcha —{" "}
+                    <a href="https://www.hcaptcha.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">
                       Politique de confidentialité
                     </a>{" "}
                     et{" "}
-                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline">
+                    <a href="https://www.hcaptcha.com/terms" target="_blank" rel="noopener noreferrer" className="underline">
                       Conditions d'utilisation
-                    </a>{" "}
-                    de Google.
+                    </a>.
                   </p>
                 </form>
               )}
