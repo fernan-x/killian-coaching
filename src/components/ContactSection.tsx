@@ -4,12 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Send, CheckCircle, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { useHCaptcha } from "@/hooks/useHCaptcha";
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 const ContactSection = () => {
   const { toast } = useToast();
-  const hcaptchaRef = useRef<HTMLDivElement>(null);
-  const { getToken, reset: resetHCaptcha } = useHCaptcha(hcaptchaRef);
+  const [token, setToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -26,6 +25,12 @@ const ContactSection = () => {
     }));
   };
 
+  const handleVerificationSuccess = (token: string, ekey: string) => {
+    setToken(token);
+  }
+
+  const isValid = formData.name.length > 0 && formData.email.length > 0 && formData.phone.length > 0 && formData.message.length && token !== null;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -39,7 +44,7 @@ const ContactSection = () => {
           subject: `Nouvelle demande de séance — ${formData.name}`,
           from_name: "Fit Truck - Formulaire de contact",
           botcheck: false,
-          "h-captcha-response": getToken(),
+          "h-captcha-response": token,
           ...formData,
         }),
       });
@@ -53,7 +58,7 @@ const ContactSection = () => {
           description: "Je vous recontacte très rapidement pour planifier votre séance découverte.",
         });
         setFormData({ name: "", email: "", phone: "", message: "" });
-        resetHCaptcha();
+        setToken(null);
       } else {
         throw new Error(data.message ?? "Erreur inconnue");
       }
@@ -63,7 +68,7 @@ const ContactSection = () => {
         description: "Une erreur est survenue. Contactez-moi directement par email ou téléphone.",
         variant: "destructive",
       });
-      resetHCaptcha();
+      setToken(null);
     } finally {
       setIsSubmitting(false);
     }
@@ -237,14 +242,18 @@ const ContactSection = () => {
                     />
                   </div>
 
-                  <div ref={hcaptchaRef} />
+                  <HCaptcha
+                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                    reCaptchaCompat={false}
+                    onVerify={(token, ekey) => handleVerificationSuccess(token, ekey)}
+                  />
 
                   <Button
                     type="submit"
                     variant="hero"
                     size="xl"
                     className="w-full"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !isValid}
                   >
                     {isSubmitting ? (
                       <>
