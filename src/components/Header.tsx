@@ -56,6 +56,7 @@ const Header = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             aria-label="Fit Truck — retour en haut"
+            style={{ textDecoration: "none", color: "inherit" }}
           >
             <img
               src={fitTruckLogo}
