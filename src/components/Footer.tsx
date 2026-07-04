@@ -25,7 +25,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="https://www.instagram.com/killian_coaching/"
+                href="https://www.instagram.com/fittruck.nantes/"
                 className="w-10 h-10 rounded-lg bg-card/10 flex items-center justify-center hover:bg-accent transition-colors"
                 aria-label="Instagram"
                 rel="noopener noreferrer"
