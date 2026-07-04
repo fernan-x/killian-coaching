@@ -150,10 +150,6 @@
   .glass-effect {
     @apply bg-card/80 backdrop-blur-lg border border-border/50;
   }
-
-  .logo-filter {
-    filter: brightness(0) saturate(100%) invert(37%) sepia(93%) saturate(1352%) hue-rotate(213deg) brightness(99%) contrast(95%);
-  }
 }
 
 @font-face {

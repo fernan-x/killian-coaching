@@ -61,7 +61,7 @@ const Header = () => {
             <img
               src={fitTruckLogo}
               alt="Fit Truck"
-              className="h-28 w-auto object-contain logo-filter"
+              className="h-28 w-auto object-contain"
             />
           </a>
 
