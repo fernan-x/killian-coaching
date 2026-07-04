@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const [token, setToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -23,19 +25,53 @@ const ContactSection = () => {
     }));
   };
 
+  const handleVerificationSuccess = (token: string, ekey: string) => {
+    setToken(token);
+  }
+
+  const isValid = formData.name.length > 0 && formData.email.length > 0 && formData.phone.length > 0 && formData.message.length && token !== null;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          subject: `Nouvelle demande de séance — ${formData.name}`,
+          from_name: "Fit Truck - Formulaire de contact",
+          botcheck: false,
+          "h-captcha-response": token,
+          ...formData,
+        }),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "Message envoyé !",
-      description: "Je vous recontacte très rapidement pour planifier votre séance découverte.",
-    });
+      const data = await res.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+        toast({
+          title: "Message envoyé !",
+          description: "Je vous recontacte très rapidement pour planifier votre séance découverte.",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setToken(null);
+      } else {
+        throw new Error(data.message ?? "Erreur inconnue");
+      }
+    } catch {
+      toast({
+        title: "Erreur d'envoi",
+        description: "Une erreur est survenue. Contactez-moi directement par email ou téléphone.",
+        variant: "destructive",
+      });
+      setToken(null);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -129,6 +165,15 @@ const ContactSection = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot — hidden from real users, bots fill it and get blocked */}
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    style={{ display: "none" }}
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    readOnly
+                  />
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -142,6 +187,8 @@ const ContactSection = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        minLength={2}
+                        maxLength={100}
                         className="h-12"
                       />
                     </div>
@@ -157,6 +204,8 @@ const ContactSection = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         required
+                        pattern="^(\+33|0)[1-9](\s?\d{2}){4}$"
+                        title="Numéro de téléphone français (ex: 06 00 00 00 00)"
                         className="h-12"
                       />
                     </div>
@@ -193,15 +242,24 @@ const ContactSection = () => {
                     />
                   </div>
 
+                  <HCaptcha
+                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                    reCaptchaCompat={false}
+                    onVerify={(token, ekey) => handleVerificationSuccess(token, ekey)}
+                  />
+
                   <Button
                     type="submit"
                     variant="hero"
                     size="xl"
                     className="w-full"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !isValid}
                   >
                     {isSubmitting ? (
-                      "Envoi en cours..."
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
+                        Envoi en cours...
+                      </>
                     ) : (
                       <>
                         Réserver ma séance gratuite
@@ -211,7 +269,15 @@ const ContactSection = () => {
                   </Button>
 
                   <p className="text-xs text-muted-foreground text-center">
-                    En soumettant ce formulaire, vous acceptez d'être recontacté pour votre séance découverte.
+                    En soumettant ce formulaire, vous acceptez d'être recontacté pour votre séance découverte.{" "}
+                    Ce site est protégé par hCaptcha —{" "}
+                    <a href="https://www.hcaptcha.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">
+                      Politique de confidentialité
+                    </a>{" "}
+                    et{" "}
+                    <a href="https://www.hcaptcha.com/terms" target="_blank" rel="noopener noreferrer" className="underline">
+                      Conditions d'utilisation
+                    </a>.
                   </p>
                 </form>
               )}
