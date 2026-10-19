@@ -1,3 +1,4 @@
+import Reveal from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
 import { Check, Star, Gift, ArrowRight, Building2, Users, Calendar, UserPlus } from "lucide-react";
 const PricingSection = () => {
@@ -28,7 +29,7 @@ const PricingSection = () => {
         {/* Pricing Cards Grid */}
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Coaching à domicile */}
-          <div className="relative">
+          <Reveal index={0} className="relative">
             {/* Popular Badge */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-1.5 shadow-lg z-10">
               <Star className="w-4 h-4" />
@@ -78,10 +79,10 @@ const PricingSection = () => {
                 </Button>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Séance Duo */}
-          <div className="relative">
+          <Reveal index={1} className="relative">
             {/* Badge */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-1.5 shadow-lg z-10">
               <UserPlus className="w-4 h-4" />
@@ -128,10 +129,10 @@ const PricingSection = () => {
                 </Button>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Coaching en entreprise */}
-          <div className="relative">
+          <Reveal index={2} className="relative">
             {/* Badge */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-1.5 shadow-lg z-10">
               <Building2 className="w-4 h-4" />
@@ -180,7 +181,7 @@ const PricingSection = () => {
                 </Button>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* Additional Info */}

@@ -1,3 +1,4 @@
+import Reveal from "@/components/Reveal";
 import { Receipt, PiggyBank, FileCheck, HelpCircle } from "lucide-react";
 const ServiceSection = () => {
   const benefits = [{
@@ -31,13 +32,15 @@ const ServiceSection = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <Reveal key={index} index={index}>
+            <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow h-full">
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                 <benefit.icon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">{benefit.title}</h3>
               <p className="text-slate-600">{benefit.description}</p>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

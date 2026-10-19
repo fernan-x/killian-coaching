@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, X } from "lucide-react";
+import { PHONE_HREF } from "@/lib/constants";
 
 const FloatingCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,10 +9,9 @@ const FloatingCTA = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling past hero section
       setIsVisible(window.scrollY > 600);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -28,13 +28,9 @@ const FloatingCTA = () => {
       >
         <X className="w-4 h-4" />
       </Button>
-      <a href="tel:+33600000000">
-        <Button
-          variant="hero"
-          size="lg"
-          className="rounded-full shadow-lg gap-2"
-        >
-          <Phone className="w-5 h-5" />
+      <a href={PHONE_HREF}>
+        <Button variant="hero" size="lg" className="rounded-full shadow-lg gap-2">
+          <Phone className="w-5 h-5" aria-hidden="true" />
           <span className="hidden sm:inline">Appeler maintenant</span>
         </Button>
       </a>

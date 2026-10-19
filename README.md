@@ -16,20 +16,23 @@ npm run dev
 
 ## Build
 
-| Command | Mode | Base path | Use case |
-|---|---|---|---|
-| `npm run build` | production | `/killian-coaching/` | GitHub Pages deployment |
-| `npm run build:dev` | development | `/` | Local production preview |
-| `npm run preview` | — | — | Preview the last build locally |
+| Command | Base path | Use case |
+|---|---|---|
+| `npm run dev` | `/` | Local dev server at `localhost:8080` |
+| `npm run build` | `/` | Production build (root domain, no sub-path) |
+| `npm run build:dev` | `/killian-coaching/` | Staging build for GitHub Pages |
+| `npm run preview` | `/` | Preview the last production build at `localhost:4173` |
 
-> **Why two build modes?**
-> In production mode, Vite prefixes all asset paths with `/killian-coaching/` to match the GitHub Pages sub-path (`fernan-x.github.io/killian-coaching/`). In development mode, the base is `/` so you can preview the build at `localhost:4173` without a sub-path.
+> Staging deploys to `fernan-x.github.io/killian-coaching/` and requires the `/killian-coaching/` sub-path prefix. Production runs at the root of its domain.
 
 ## Deployment
 
-Pushes to `main` automatically trigger the GitHub Actions workflow (`.github/workflows/nextjs.yml`) which builds and deploys to GitHub Pages.
+| Branch | Environment | Build command |
+|---|---|---|
+| `develop` | Staging — `fernan-x.github.io/killian-coaching/` | `npm run build:dev` |
+| `main` | Production | `npm run build` |
 
-**Live URL:** https://fernan-x.github.io/killian-coaching/
+Pushes to either branch automatically trigger the GitHub Actions workflow (`.github/workflows/nextjs.yml`) and deploy to GitHub Pages.
 
 ## Project structure
 
