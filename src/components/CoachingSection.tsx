@@ -1,3 +1,4 @@
+import Reveal from "@/components/Reveal";
 import { Home, Target, Users, Truck, CheckCircle, Building2, Clock, Heart, Briefcase, Zap, Video, Wifi, Calendar } from "lucide-react";
 import domicileImage from "@/assets/coaching-domicile.jpg";
 import visioImage from "@/assets/coaching-visio.jpg";
@@ -99,11 +100,12 @@ const CoachingSection = () => {
 
         {/* Panel */}
         <div
+          key={activeTab}
           id={`panel-${activeTab}`}
           role="tabpanel"
           aria-labelledby={`tab-${activeTab}`}
           tabIndex={0}
-          className="focus-visible:outline-none"
+          className="focus-visible:outline-none animate-panel-in"
         >
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -125,17 +127,15 @@ const CoachingSection = () => {
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className="bg-card rounded-2xl p-6 shadow-custom-sm hover:shadow-custom-md transition-all duration-300 card-hover group"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+              <Reveal key={feature.title} index={index}>
+              <div className="bg-card rounded-2xl p-6 shadow-custom-sm hover:shadow-custom-md transition-all duration-300 card-hover group h-full">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <feature.icon className="w-7 h-7 text-primary" aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </div>
+              </Reveal>
             ))}
           </div>
 

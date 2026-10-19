@@ -150,8 +150,8 @@ const ContactSection = () => {
           <div className="lg:col-span-3">
             <div className="bg-card rounded-3xl shadow-custom-md p-6 sm:p-8">
               {isSubmitted ? (
-                <div className="text-center py-12">
-                  <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                <div className="text-center py-12 animate-success-in">
+                  <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4 animate-icon-pop">
                     <CheckCircle className="w-8 h-8 text-accent" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">Message envoyé !</h3>

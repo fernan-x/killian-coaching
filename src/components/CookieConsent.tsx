@@ -8,6 +8,7 @@ type ConsentStatus = "accepted" | "refused" | null;
 export default function CookieConsent() {
   const [status, setStatus] = useState<ConsentStatus>(null);
   const [visible, setVisible] = useState(false);
+  const [leaving, setLeaving] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as ConsentStatus;
@@ -21,17 +22,22 @@ export default function CookieConsent() {
     }
   }, []);
 
+  function dismiss() {
+    setLeaving(true);
+    setTimeout(() => setVisible(false), 200);
+  }
+
   function accept() {
     localStorage.setItem(STORAGE_KEY, "accepted");
     setStatus("accepted");
-    setVisible(false);
+    dismiss();
     initGA();
   }
 
   function refuse() {
     localStorage.setItem(STORAGE_KEY, "refused");
     setStatus("refused");
-    setVisible(false);
+    dismiss();
   }
 
   if (!visible) return null;
@@ -40,7 +46,9 @@ export default function CookieConsent() {
     <div
       role="dialog"
       aria-label="Consentement aux cookies"
-      className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 bg-white border-t border-gray-200 shadow-lg"
+      className={`fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 bg-white border-t border-gray-200 shadow-lg ${
+        leaving ? "animate-sheet-down" : "animate-sheet-up"
+      }`}
     >
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <div className="flex-1 text-sm text-gray-700">

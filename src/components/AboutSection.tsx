@@ -1,3 +1,4 @@
+import Reveal from "@/components/Reveal";
 import { Award, GraduationCap, Heart, Target } from "lucide-react";
 import coachImage from "@/assets/coach-portrait.jpg";
 
@@ -67,11 +68,9 @@ const AboutSection = () => {
 
             {/* Values */}
             <div className="space-y-4">
-              {values.map((value) => (
-                <div
-                  key={value.title}
-                  className="flex items-start gap-4 bg-card rounded-xl p-4 shadow-custom-sm"
-                >
+              {values.map((value, index) => (
+                <Reveal key={value.title} index={index}>
+                <div className="flex items-start gap-4 bg-card rounded-xl p-4 shadow-custom-sm">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
                     <value.icon className="w-5 h-5 text-accent" />
                   </div>
@@ -80,6 +79,7 @@ const AboutSection = () => {
                     <p className="text-sm text-muted-foreground">{value.description}</p>
                   </div>
                 </div>
+                </Reveal>
               ))}
             </div>
           </div>

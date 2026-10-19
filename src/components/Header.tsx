@@ -106,8 +106,13 @@ const Header = () => {
         </nav>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-card shadow-custom-lg border-t border-border animate-fade-in">
+        <div
+          className={`lg:hidden absolute top-full left-0 right-0 origin-top bg-card shadow-custom-lg border-t border-border transition-[opacity,transform,visibility] ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transform-none ${
+            isMobileMenuOpen
+              ? "visible opacity-100 translate-y-0 duration-200"
+              : "invisible opacity-0 -translate-y-2 duration-150"
+          }`}
+        >
             <div className="container-custom px-4 py-6 flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Button
@@ -136,8 +141,7 @@ const Header = () => {
                 Séance découverte offerte
               </Button>
             </div>
-          </div>
-        )}
+        </div>
       </div>
     </header>
   );
